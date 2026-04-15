@@ -10,7 +10,7 @@
 &nbsp;
 <img src="https://img.shields.io/badge/📍-高雄市%2C%20台灣-0f3460?style=for-the-badge&logoColor=white"/>
 &nbsp;
-<img src="https://img.shields.io/badge/📱-0968--665--369-16213e?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/📱-09XX--XXX--XXX-16213e?style=for-the-badge"/>
 
 <br/><br/>
 
@@ -18,6 +18,18 @@
 > *善於團隊溝通交流，期待將紮實的學術訓練與解決問題的能力帶入職場。*
 
 </div>
+
+---
+
+## 📝 自傳 About Me
+
+**我是陳俞閔**，目前就讀於國立中正大學通訊工程研究所，預計於 2026 年 8 月取得碩士學位。
+
+大學就讀於國立高雄科技大學通訊工程學系，在四年的學習過程中，逐漸對於演算法設計與系統實作產生濃厚興趣。大四專題期間，獨立完成從演算法研究到跨平台網頁展示的整合性專案——「QR Code 掃描優化與跨平台技術展示系統」，該專題憑藉高實用性與完整的技術整合，**榮獲畢業專題佳作**，也讓我更確定繼續深造的方向。
+
+升上碩士後，研究方向聚焦於 **AI 演算法結合通訊系統的應用**，目前主要研究流體天線系統（FAS）的聯合最佳化問題，透過結合 ConvCNP 神經過程模型與深度強化學習（Assisted D3QN），在資訊不完整的條件下最大化系統總和速率。研究歷程中不僅深化了對於機器學習框架（PyTorch）的掌握，也培養了嚴謹的實驗方法與數據分析能力。
+
+在技術廣度上，除了核心的 AI 研究，我也具備全端開發能力，熟悉 Python、C/C++、Node.js 與 Docker 容器化部署，曾實作多人即時聊天室系統並完成容器化部署。秉持著「只要肯學就能掌握」的積極態度，做事嚴謹、條理分明，善於在團隊中溝通協作，期待能將紮實的學術訓練與動手實作的能力帶入職場，創造實際價值。
 
 ---
 
@@ -30,7 +42,7 @@ class YuMinChen:
         self.role       = ["碩士研究生", "AI 演算法工程師", "全端開發者"]
         self.education  = "國立中正大學｜通訊工程研究所"
         self.location   = "高雄市, 台灣 🇹🇼"
-        self.email      = "qazwsopp@gmail.com"
+        self.email      = "XXXXXXXX@gmail.com"
         self.focus      = ["深度強化學習", "流體天線系統", "ConvCNP 神經過程"]
         self.interests  = ["AI 新技術研究 🤖", "開源專案貢獻 💻", "閱讀科技論文 📚", "羽球 🏸"]
     
@@ -113,27 +125,13 @@ class YuMinChen:
 
 ---
 
-## 📊 GitHub Stats
+## 🎯 Interests
 
-<div align="center">
+🏸 **羽球** — 熱愛運動，享受團隊合作與競技的樂趣
 
-<img height="160" src="https://github-readme-stats.vercel.app/api?username=YOUR_GITHUB_USERNAME&show_icons=true&theme=tokyonight&hide_border=true&count_private=true&bg_color=0d1117&title_color=e94560&icon_color=e94560&text_color=a8b2d8" />
-&nbsp;&nbsp;
-<img height="160" src="https://github-readme-stats.vercel.app/api/top-langs/?username=YOUR_GITHUB_USERNAME&layout=compact&theme=tokyonight&hide_border=true&bg_color=0d1117&title_color=e94560&text_color=a8b2d8" />
+🤖 **鑽研 AI 技術** — 持續學習並動手實作新演算法
 
-</div>
-
----
-
-## 🌱 Interests
-
-🤖 **AI 新技術研究** — 持續追蹤最新 AI / ML 動態與論文
-
-📖 **開源專案貢獻** — 積極回饋開源社群
-
-📚 **閱讀科技論文** — 深度強化學習 & 通訊領域研究
-
-🏸 **羽球** — 運動愛好者，享受競技樂趣
+🛠️ **Side Projects** — 喜歡把想法化為可運行的程式
 
 ---
 
@@ -143,11 +141,11 @@ class YuMinChen:
 
 | 📧 Email | 📱 Phone | 📍 Location |
 |:---:|:---:|:---:|
-| [qazwsopp@gmail.com](mailto:qazwsopp@gmail.com) | 0968-665-369 | 高雄市, 台灣 |
+| [XXXXXXXX@gmail.com](mailto:XXXXXXXX@gmail.com) | 09XX-XXX-XXX | 高雄市, 台灣 |
 
 <br/>
 
-![Profile Views](https://komarev.com/ghpvc/?username=YOUR_GITHUB_USERNAME&color=e94560&style=flat-square&label=Profile+Views)
+![Profile Views](https://komarev.com/ghpvc/?username=Weselymachianl&color=e94560&style=flat-square&label=Profile+Views)
 
 </div>
 
