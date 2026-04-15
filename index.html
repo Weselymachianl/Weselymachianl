@@ -1,40 +1,34 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>陳俞閔 Yu-Min Chen | AI 演算法工程師</title>
-  <meta name="description" content="陳俞閔的個人介紹頁面，專精 AI 演算法、深度強化學習與全端開發的應屆碩士畢業生。" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
-    rel="stylesheet" />
+  <meta name="description" content="陳俞閔個人作品集，專精 AI 演算法、深度強化學習與全端開發的應屆碩士畢業生。"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    /* ────────────────────────────────────────
+       RESET & ROOT
+    ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --bg: #0d1117;
-      --bg2: #161b22;
-      --bg3: #1c2128;
-      --accent: #e94560;
-      --accent2: #0f3460;
-      --blue: #58a6ff;
-      --text: #c9d1d9;
-      --text-dim: #8b949e;
-      --border: #30363d;
-      --card-glow: rgba(233, 69, 96, 0.08);
+      --bg:       #06080f;
+      --bg2:      #0e1117;
+      --bg3:      #141923;
+      --border:   rgba(255,255,255,0.08);
+      --text:     #e2e8f0;
+      --dim:      #8892a4;
+      --red:      #e94560;
+      --cyan:     #00d4ff;
+      --purple:   #8b5cf6;
+      --orange:   #f97316;
+      --green:    #10b981;
+      --blue:     #3b82f6;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       background: var(--bg);
@@ -42,1030 +36,955 @@
       font-family: 'Inter', sans-serif;
       line-height: 1.7;
       overflow-x: hidden;
+      cursor: none; /* hide default cursor */
     }
 
     /* ── SCROLLBAR ── */
-    ::-webkit-scrollbar {
-      width: 6px;
-    }
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: linear-gradient(var(--red), var(--purple)); border-radius: 9px; }
 
-    ::-webkit-scrollbar-track {
-      background: var(--bg);
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: var(--accent);
-      border-radius: 3px;
-    }
-
-    /* ── NAV ── */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: rgba(13, 17, 23, 0.85);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border);
-      padding: 0 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 56px;
-    }
-
-    .nav-logo {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.95rem;
-      color: var(--accent);
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.8rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: var(--text-dim);
-      text-decoration: none;
-      font-size: 0.85rem;
-      font-weight: 500;
-      transition: color .2s;
-    }
-
-    .nav-links a:hover {
-      color: var(--text);
-    }
-
-    /* ── HERO ── */
-    #hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      padding: 80px 2rem 2rem;
-      overflow: hidden;
-    }
-
-    .hero-bg {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(233, 69, 96, 0.12) 0%, transparent 65%),
-        radial-gradient(ellipse 60% 50% at 80% 100%, rgba(15, 52, 96, 0.3) 0%, transparent 60%);
-    }
-
-    .hero-grid {
-      position: absolute;
-      inset: 0;
-      background-image: linear-gradient(var(--border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border) 1px, transparent 1px);
-      background-size: 60px 60px;
-      opacity: 0.2;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      max-width: 720px;
-    }
-
-    .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(233, 69, 96, 0.1);
-      border: 1px solid rgba(233, 69, 96, 0.3);
-      border-radius: 999px;
-      padding: 4px 14px;
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: var(--accent);
-      margin-bottom: 1.5rem;
-      animation: fadeDown .6s ease both;
-    }
-
-    .hero-tag::before {
-      content: "●";
-      font-size: 0.55rem;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-
-      0%,
-      100% {
-        opacity: 1
-      }
-
-      50% {
-        opacity: .3
-      }
-    }
-
-    .hero-name {
-      font-size: clamp(2.6rem, 6vw, 4rem);
-      font-weight: 700;
-      line-height: 1.15;
-      margin-bottom: 0.4rem;
-      background: linear-gradient(135deg, #ffffff 0%, #a8b2d8 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: fadeDown .7s ease .1s both;
-    }
-
-    .hero-name span {
-      background: linear-gradient(135deg, var(--accent), #ff6b6b);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .hero-sub {
-      font-size: 1rem;
-      color: var(--text-dim);
-      margin-bottom: 1.8rem;
-      animation: fadeDown .7s ease .2s both;
-    }
-
-    .hero-sub b {
-      color: var(--blue);
-    }
-
-    .hero-desc {
-      font-size: 0.95rem;
-      color: var(--text-dim);
-      max-width: 560px;
-      margin: 0 auto 2.2rem;
-      animation: fadeDown .7s ease .3s both;
-    }
-
-    .hero-btns {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      animation: fadeDown .7s ease .4s both;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 22px;
-      border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      text-decoration: none;
-      transition: all .2s;
-      cursor: pointer;
-      border: none;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      box-shadow: 0 0 20px rgba(233, 69, 96, 0.35);
-    }
-
-    .btn-primary:hover {
-      background: #ff6b6b;
-      box-shadow: 0 0 30px rgba(233, 69, 96, 0.55);
-      transform: translateY(-2px);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--text);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      transform: translateY(-2px);
-    }
-
-    .hero-badges {
-      display: flex;
-      gap: .6rem;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 2rem;
-      animation: fadeDown .7s ease .5s both;
-    }
-
-    .badge {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 4px 12px;
-      font-size: 0.78rem;
-      color: var(--text-dim);
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    /* ── SECTION ── */
-    section {
-      padding: 80px 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .section-label {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem;
-      color: var(--accent);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: .5rem;
-    }
-
-    .section-title {
-      font-size: 1.9rem;
-      font-weight: 700;
-      margin-bottom: 2.5rem;
-      color: #fff;
-    }
-
-    .section-divider {
-      width: 40px;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), transparent);
-      border-radius: 2px;
-      margin: .5rem 0 2.5rem;
-    }
-
-    /* ── ABOUT ── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 3rem;
-      align-items: start;
-    }
-
-    @media(max-width:640px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .info-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: .9rem;
-    }
-
-    .info-list li {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 0.9rem;
-    }
-
-    .info-list .icon {
-      width: 34px;
-      height: 34px;
-      flex-shrink: 0;
-      background: var(--bg3);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1rem;
-    }
-
-    .info-list a {
-      color: var(--blue);
-      text-decoration: none;
-    }
-
-    .info-list a:hover {
-      text-decoration: underline;
-    }
-
-    .about-quote {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      border-radius: 8px;
-      padding: 1.4rem 1.6rem;
-      font-size: 0.9rem;
-      color: var(--text-dim);
-      font-style: italic;
-      line-height: 1.8;
-    }
-
-    .about-quote strong {
-      color: var(--text);
-      font-style: normal;
-    }
-
-    /* ── SKILLS ── */
-    .skills-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 1.8rem;
-    }
-
-    .skill-group-title {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: .8rem;
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    .chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .5rem;
-    }
-
-    .chip {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 5px 14px;
-      font-size: 0.83rem;
-      color: var(--text);
-      transition: all .2s;
-    }
-
-    .chip:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-      background: rgba(233, 69, 96, .06);
-      transform: translateY(-1px);
-    }
-
-    .chip.highlight {
-      background: rgba(233, 69, 96, .1);
-      border-color: rgba(233, 69, 96, .35);
-      color: var(--accent);
-    }
-
-    /* ── PROJECTS ── */
-    .projects-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.4rem;
-    }
-
-    .project-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.6rem 1.8rem;
-      transition: all .25s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project-card::before {
+    /* ────────────────────────────────────────
+       GLOBAL BACKGROUND (full page glow mesh)
+    ──────────────────────────────────────── */
+    body::before {
       content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, var(--accent), transparent);
-      opacity: 0;
-      transition: opacity .25s;
+      position: fixed; inset: 0; z-index: -2;
+      background:
+        radial-gradient(ellipse 60% 50% at 0% 0%,   rgba(233,69,96,0.18)  0%, transparent 55%),
+        radial-gradient(ellipse 50% 40% at 100% 20%, rgba(0,212,255,0.14)  0%, transparent 55%),
+        radial-gradient(ellipse 45% 45% at 80% 100%, rgba(139,92,246,0.16) 0%, transparent 55%),
+        radial-gradient(ellipse 40% 35% at 20% 80%,  rgba(249,115,22,0.12) 0%, transparent 50%),
+        #06080f;
+      animation: bgShift 20s ease-in-out infinite alternate;
+    }
+    @keyframes bgShift {
+      0%   { filter: hue-rotate(0deg); }
+      100% { filter: hue-rotate(30deg); }
     }
 
-    .project-card:hover {
-      border-color: rgba(233, 69, 96, .4);
-      background: var(--bg3);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, .4), 0 0 0 1px rgba(233, 69, 96, .1);
-    }
-
-    .project-card:hover::before {
-      opacity: 1;
-    }
-
-    .project-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 1rem;
-      margin-bottom: .8rem;
-    }
-
-    .project-title {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: #fff;
-    }
-
-    .project-meta {
-      display: flex;
-      gap: .5rem;
-      flex-wrap: wrap;
-      margin-bottom: .8rem;
-    }
-
-    .project-tag {
-      font-size: 0.72rem;
-      padding: 2px 10px;
-      border-radius: 999px;
-      font-weight: 500;
-    }
-
-    .tag-research {
-      background: rgba(88, 166, 255, .15);
-      color: #58a6ff;
-    }
-
-    .tag-award {
-      background: rgba(210, 153, 34, .15);
-      color: #e3b341;
-    }
-
-    .tag-cloud {
-      background: rgba(63, 185, 80, .15);
-      color: #3fb950;
-    }
-
-    .project-desc {
-      font-size: 0.88rem;
-      color: var(--text-dim);
-      line-height: 1.75;
-      margin-bottom: 1rem;
-    }
-
-    .project-desc li {
-      margin-left: 1rem;
-      margin-bottom: .3rem;
-    }
-
-    .project-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .4rem;
-    }
-
-    .project-chip {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.73rem;
-      padding: 2px 8px;
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      color: var(--text-dim);
-    }
-
-    /* ── EDUCATION ── */
-    .edu-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    .edu-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.3rem 1.6rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-      transition: border-color .2s;
-    }
-
-    .edu-card:hover {
-      border-color: rgba(233, 69, 96, .4);
-    }
-
-    .edu-school {
-      font-size: 0.8rem;
-      color: var(--text-dim);
-      margin-bottom: .2rem;
-    }
-
-    .edu-dept {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #fff;
-    }
-
-    .edu-right {
-      text-align: right;
-    }
-
-    .edu-degree {
-      display: inline-block;
-      background: rgba(233, 69, 96, .12);
-      border: 1px solid rgba(233, 69, 96, .3);
-      color: var(--accent);
-      border-radius: 6px;
-      padding: 2px 10px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      margin-bottom: .3rem;
-    }
-
-    .edu-period {
-      font-size: 0.82rem;
-      color: var(--text-dim);
-      font-family: 'JetBrains Mono', monospace;
-    }
-
-    /* ── BIOGRAPHY ── */
-    .bio-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 2rem 2.2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .bio-card::before {
-      content: '\201C';
-      position: absolute;
-      top: -10px;
-      left: 16px;
-      font-size: 8rem;
-      color: rgba(233, 69, 96, 0.08);
-      font-family: Georgia, serif;
-      line-height: 1;
+    body::after {
+      content: '';
+      position: fixed; inset: 0; z-index: -1;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black, transparent);
+      -webkit-mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, black, transparent);
       pointer-events: none;
     }
 
-    .bio-para {
-      font-size: 0.95rem;
-      color: var(--text-dim);
-      line-height: 1.9;
-      margin-bottom: 1.2rem;
+    /* ────────────────────────────────────────
+       MOUSE CURSOR
+    ──────────────────────────────────────── */
+    #cursor-dot {
+      position: fixed; z-index: 9999; pointer-events: none;
+      width: 8px; height: 8px; border-radius: 50%;
+      background: #fff;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease, width 0.2s, height 0.2s, background 0.2s;
+      mix-blend-mode: difference;
+    }
+    #cursor-glow {
+      position: fixed; z-index: 9998; pointer-events: none;
+      width: 300px; height: 300px; border-radius: 50%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle,
+        rgba(139,92,246,0.18) 0%,
+        rgba(233,69,96,0.10) 40%,
+        transparent 70%);
+      transition: transform 0.08s linear;
+    }
+    #cursor-ring {
+      position: fixed; z-index: 9998; pointer-events: none;
+      width: 32px; height: 32px; border-radius: 50%;
+      border: 1.5px solid rgba(139,92,246,0.6);
+      transform: translate(-50%, -50%);
+      transition: transform 0.18s ease, width 0.2s, height 0.2s, border-color 0.2s;
+    }
+    body:has(a:hover) #cursor-ring,
+    body:has(button:hover) #cursor-ring {
+      width: 50px; height: 50px;
+      border-color: rgba(0,212,255,0.8);
     }
 
-    .bio-para:last-child {
-      margin-bottom: 0;
+    /* ────────────────────────────────────────
+       NAV
+    ──────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 500;
+      height: 58px;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem;
+      background: rgba(6,8,15,0.75);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.92rem; font-weight: 600;
+      color: var(--red); letter-spacing: 0.5px;
+      cursor: pointer;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--dim); text-decoration: none;
+      font-size: 0.84rem; font-weight: 500;
+      transition: color .2s;
+      cursor: pointer;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    /* Hamburger (mobile) */
+    .burger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 4px;
+    }
+    .burger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--text); border-radius: 2px;
+      transition: all .3s;
+    }
+    .burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .burger.open span:nth-child(2) { opacity: 0; }
+    .burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* Mobile nav drawer */
+    .mobile-menu {
+      display: none;
+      position: fixed; top: 58px; left: 0; right: 0; z-index: 450;
+      background: rgba(6,8,15,0.97);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 1.2rem 2rem;
+      flex-direction: column; gap: 1rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      color: var(--dim); text-decoration: none;
+      font-size: 1rem; font-weight: 500;
+      padding: 0.4rem 0;
+      border-bottom: 1px solid var(--border);
+      transition: color .2s;
+    }
+    .mobile-menu a:hover { color: var(--text); }
+
+    /* ────────────────────────────────────────
+       HERO
+    ──────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      padding: 80px 1.5rem 2rem;
     }
 
-    .bio-para strong {
-      color: var(--text);
+    /* Animated orbs */
+    .orb {
+      position: absolute; border-radius: 50%;
+      filter: blur(90px); opacity: 0.6;
+      animation: orbDrift linear infinite;
+      pointer-events: none;
+    }
+    .orb-1 { width:520px;height:520px; background:radial-gradient(circle,#e94560,#9d1135); top:-160px;left:-120px; animation-duration:20s; }
+    .orb-2 { width:440px;height:440px; background:radial-gradient(circle,#00d4ff,#0055cc); top:10%;right:-120px; animation-duration:24s;animation-delay:-8s; }
+    .orb-3 { width:400px;height:400px; background:radial-gradient(circle,#8b5cf6,#4c1d95); bottom:-80px;left:30%; animation-duration:28s;animation-delay:-15s; }
+    .orb-4 { width:320px;height:320px; background:radial-gradient(circle,#f97316,#e94560); top:60%;right:15%; animation-duration:22s;animation-delay:-5s; }
+    .orb-5 { width:260px;height:260px; background:radial-gradient(circle,#10b981,#0077ff); top:35%;left:45%; animation-duration:32s;animation-delay:-20s;opacity:0.35; }
+    @keyframes orbDrift {
+      0%   { transform:translate(0,0) scale(1); }
+      25%  { transform:translate(50px,-70px) scale(1.08); }
+      50%  { transform:translate(-40px,50px) scale(0.94); }
+      75%  { transform:translate(70px,25px) scale(1.06); }
+      100% { transform:translate(0,0) scale(1); }
     }
 
-    .bio-para em {
-      color: var(--accent);
-      font-style: normal;
-      font-weight: 600;
+    /* Particles canvas */
+    #particles-canvas {
+      position: absolute; inset: 0; z-index: 0; opacity: 0.5;
+      pointer-events: none;
     }
 
-    /* ── INTERESTS ── */
-    .interests-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1rem;
+    /* Grid */
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 50px 50px;
+      mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 0%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 0%, transparent 100%);
+      pointer-events: none;
     }
 
-    .interest-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.4rem;
-      transition: all .2s;
+    .hero-content {
+      position: relative; z-index: 2;
+      text-align: center; max-width: 760px;
+      width: 100%;
     }
 
-    .interest-card:hover {
-      border-color: rgba(233, 69, 96, .4);
-      transform: translateY(-3px);
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(233,69,96,0.1);
+      border: 1px solid rgba(233,69,96,0.35);
+      border-radius: 999px; padding: 5px 16px;
+      font-size: 0.78rem; font-weight: 500; color: var(--red);
+      margin-bottom: 1.6rem;
+      animation: fadeDown .6s ease both;
     }
+    .hero-tag::before { content:"●"; font-size:.5rem; animation: blink 2s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.2} }
 
-    .interest-icon {
-      font-size: 2rem;
-      margin-bottom: .6rem;
-    }
-
-    .interest-name {
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: .3rem;
-    }
-
-    .interest-desc {
-      font-size: 0.82rem;
-      color: var(--text-dim);
-    }
-
-    /* ── CONTACT ── */
-    #contact {
-      text-align: center;
-    }
-
-    .contact-cards {
-      display: flex;
-      justify-content: center;
-      gap: 1.2rem;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
-    }
-
-    .contact-card {
-      background: var(--bg2);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.4rem 2rem;
-      text-decoration: none;
-      color: var(--text);
-      transition: all .2s;
-      min-width: 160px;
-    }
-
-    .contact-card:hover {
-      border-color: var(--accent);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(233, 69, 96, .15);
-    }
-
-    .contact-icon {
-      font-size: 1.8rem;
+    .hero-name {
+      font-size: clamp(2.4rem, 7vw, 4.2rem);
+      font-weight: 800; line-height: 1.1;
       margin-bottom: .5rem;
+      background: linear-gradient(135deg, #fff 0%, #c4cde0 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      animation: fadeDown .7s .1s ease both;
+    }
+    .hero-name .highlight {
+      background: linear-gradient(135deg, #00d4ff 0%, #8b5cf6 50%, #e94560 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 0 24px rgba(139,92,246,.5));
     }
 
-    .contact-label {
-      font-size: 0.72rem;
-      color: var(--text-dim);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: .2rem;
+    .hero-sub {
+      font-size: 1rem; color: var(--dim);
+      margin-bottom: 1.8rem;
+      animation: fadeDown .7s .2s ease both;
+    }
+    .hero-sub b { color: var(--cyan); }
+
+    .hero-desc {
+      font-size: 0.95rem; color: var(--dim);
+      max-width: 540px; margin: 0 auto 2rem;
+      animation: fadeDown .7s .3s ease both;
     }
 
-    .contact-value {
-      font-size: 0.88rem;
-      font-weight: 500;
+    .hero-btns {
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+      animation: fadeDown .7s .4s ease both;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 11px 24px; border-radius: 10px;
+      font-size: 0.9rem; font-weight: 600;
+      text-decoration: none; transition: all .25s;
+      cursor: pointer; border: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--red), #c0195c);
+      color: #fff;
+      box-shadow: 0 0 24px rgba(233,69,96,.4), 0 4px 16px rgba(0,0,0,.3);
+    }
+    .btn-primary:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 0 40px rgba(233,69,96,.6), 0 8px 24px rgba(0,0,0,.4);
+    }
+    .btn-outline {
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+    .btn-outline:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      transform: translateY(-3px);
+      box-shadow: 0 0 20px rgba(0,212,255,.15);
     }
 
-    /* ── FOOTER ── */
-    footer {
-      border-top: 1px solid var(--border);
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.8rem;
-      color: var(--text-dim);
+    .hero-badges {
+      display: flex; gap: .5rem; flex-wrap: wrap; justify-content: center;
+      margin-top: 1.8rem;
+      animation: fadeDown .7s .5s ease both;
+    }
+    .badge {
+      background: rgba(255,255,255,.06);
+      border: 1px solid var(--border);
+      border-radius: 6px; padding: 4px 12px;
+      font-size: 0.76rem; color: var(--dim);
+      font-family: 'JetBrains Mono', monospace;
+      transition: all .2s;
+    }
+    .badge:hover { border-color: var(--purple); color: var(--purple); }
+
+    @keyframes fadeDown {
+      from { opacity:0; transform:translateY(-18px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+
+    /* ────────────────────────────────────────
+       SECTION BASE
+    ──────────────────────────────────────── */
+    section {
+      padding: 90px 1.5rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.73rem; color: var(--red);
+      letter-spacing: 2.5px; text-transform: uppercase;
+      margin-bottom: .4rem;
+    }
+    .section-title {
+      font-size: 2rem; font-weight: 700;
+      color: #fff; margin-bottom: .5rem;
+    }
+    .section-divider {
+      width: 44px; height: 3px;
+      background: linear-gradient(90deg, var(--red), var(--purple), transparent);
+      border-radius: 2px; margin-bottom: 2.5rem;
+    }
+
+    /* reveal animation */
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ────────────────────────────────────────
+       GLOWING CARD BASE
+    ──────────────────────────────────────── */
+    .glow-card {
+      background: rgba(14,17,23,0.8);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      position: relative;
+      transition: all .3s;
+      backdrop-filter: blur(8px);
+    }
+    .glow-card::before {
+      content: '';
+      position: absolute; inset: -1px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, rgba(233,69,96,.3), rgba(139,92,246,.3), rgba(0,212,255,.2));
+      opacity: 0;
+      transition: opacity .3s;
+      z-index: -1;
+    }
+    .glow-card:hover::before { opacity: 1; }
+    .glow-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,.5);
+    }
+
+    /* ────────────────────────────────────────
+       ABOUT
+    ──────────────────────────────────────── */
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1.3fr; gap: 2.5rem;
+      align-items: start;
+    }
+    .info-list { list-style: none; display: flex; flex-direction: column; gap: .85rem; }
+    .info-list li { display: flex; align-items: center; gap: 12px; font-size: 0.9rem; }
+    .info-icon {
+      width: 36px; height: 36px; flex-shrink: 0;
+      border-radius: 9px;
+      background: rgba(139,92,246,.15);
+      border: 1px solid rgba(139,92,246,.3);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .info-list a { color: var(--cyan); text-decoration: none; }
+    .info-list a:hover { text-decoration: underline; }
+    .about-quote {
+      padding: 1.6rem 1.8rem;
+      border-left: 3px solid var(--purple);
+      font-size: 0.92rem; color: var(--dim);
+      line-height: 1.9;
+    }
+    .about-quote strong { color: var(--text); }
+
+    /* ────────────────────────────────────────
+       BIOGRAPHY
+    ──────────────────────────────────────── */
+    .bio-card {
+      padding: 2.2rem 2.4rem;
+    }
+    .bio-card::after {
+      content: '\201C';
+      position: absolute; top: -10px; left: 20px;
+      font-size: 9rem; color: rgba(139,92,246,.07);
+      font-family: Georgia, serif; line-height: 1;
+      pointer-events: none;
+    }
+    .bio-para {
+      font-size: 0.95rem; color: var(--dim);
+      line-height: 1.95; margin-bottom: 1.2rem;
+    }
+    .bio-para:last-child { margin-bottom: 0; }
+    .bio-para strong { color: var(--text); }
+    .bio-para em { color: var(--cyan); font-style: normal; font-weight: 600; }
+
+    /* ────────────────────────────────────────
+       SKILLS
+    ──────────────────────────────────────── */
+    .skills-stack { display: flex; flex-direction: column; gap: 2rem; }
+    .skill-group-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.76rem; font-weight: 600;
+      color: var(--purple); text-transform: uppercase;
+      letter-spacing: 1.8px; margin-bottom: .8rem;
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .chip {
+      background: rgba(255,255,255,.05);
+      border: 1px solid var(--border);
+      border-radius: 7px; padding: 5px 14px;
+      font-size: 0.82rem; color: var(--text);
+      transition: all .2s; cursor: default;
+    }
+    .chip:hover {
+      border-color: var(--cyan); color: var(--cyan);
+      background: rgba(0,212,255,.07);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(0,212,255,.12);
+    }
+    .chip.hi {
+      background: rgba(139,92,246,.12);
+      border-color: rgba(139,92,246,.4);
+      color: var(--purple);
+    }
+    .chip.hi:hover {
+      border-color: var(--purple); color: var(--purple);
+      background: rgba(139,92,246,.2);
+      box-shadow: 0 4px 16px rgba(139,92,246,.2);
+    }
+
+    /* ────────────────────────────────────────
+       PROJECTS
+    ──────────────────────────────────────── */
+    .projects-list { display: flex; flex-direction: column; gap: 1.4rem; }
+    .project-card { padding: 1.8rem 2rem; }
+    .project-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--red), var(--purple), transparent);
+      border-radius: 16px 16px 0 0;
+      opacity: 0; transition: opacity .3s;
+    }
+    .project-card:hover::before { opacity: 1; }
+    .project-title { font-size: 1.05rem; font-weight: 700; color: #fff; margin-bottom: .6rem; }
+    .project-tags { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: .8rem; }
+    .ptag {
+      font-size: 0.71rem; padding: 2px 10px; border-radius: 999px; font-weight: 600;
+    }
+    .ptag-r { background: rgba(59,130,246,.15); color: #60a5fa; }
+    .ptag-a { background: rgba(234,179,8,.15);  color: #facc15; }
+    .ptag-g { background: rgba(16,185,129,.15); color: #34d399; }
+    .project-desc { font-size: 0.88rem; color: var(--dim); line-height: 1.75; margin-bottom: 1rem; }
+    .project-desc li { margin-left: 1.1rem; margin-bottom: .3rem; }
+    .project-chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .pchip {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.71rem; padding: 2px 8px;
+      background: rgba(255,255,255,.05); border: 1px solid var(--border);
+      border-radius: 4px; color: var(--dim);
+    }
+
+    /* ────────────────────────────────────────
+       EDUCATION
+    ──────────────────────────────────────── */
+    .edu-list { display: flex; flex-direction: column; gap: 1rem; }
+    .edu-card {
+      padding: 1.4rem 1.8rem;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1rem; flex-wrap: wrap;
+    }
+    .edu-school { font-size: 0.8rem; color: var(--dim); margin-bottom: .2rem; }
+    .edu-dept   { font-size: 1.05rem; font-weight: 700; color: #fff; }
+    .edu-right  { text-align: right; }
+    .edu-degree {
+      display: inline-block;
+      background: rgba(233,69,96,.12); border: 1px solid rgba(233,69,96,.35);
+      color: var(--red); border-radius: 7px;
+      padding: 2px 12px; font-size: 0.74rem; font-weight: 700;
+      margin-bottom: .3rem; letter-spacing: .5px;
+    }
+    .edu-period {
+      font-size: 0.8rem; color: var(--dim);
       font-family: 'JetBrains Mono', monospace;
     }
 
-    footer span {
-      color: var(--accent);
+    /* ────────────────────────────────────────
+       INTERESTS
+    ──────────────────────────────────────── */
+    .interests-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    .interest-card { padding: 1.5rem; }
+    .interest-icon { font-size: 2.2rem; margin-bottom: .6rem; }
+    .interest-name { font-weight: 700; color: #fff; margin-bottom: .3rem; }
+    .interest-desc { font-size: 0.82rem; color: var(--dim); }
+
+    /* ────────────────────────────────────────
+       CONTACT
+    ──────────────────────────────────────── */
+    #contact { text-align: center; }
+    .contact-cards {
+      display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap;
+      margin-bottom: 2rem; margin-top: 1rem;
+    }
+    .contact-card {
+      padding: 1.5rem 2.2rem;
+      text-decoration: none; color: var(--text);
+      min-width: 170px;
+    }
+    .contact-icon { font-size: 2rem; margin-bottom: .5rem; }
+    .contact-label { font-size: 0.7rem; color: var(--dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: .2rem; }
+    .contact-value { font-size: 0.9rem; font-weight: 600; }
+
+    /* ────────────────────────────────────────
+       FOOTER
+    ──────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center; padding: 2rem 1rem;
+      font-size: 0.8rem; color: var(--dim);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    footer span { color: var(--red); }
+
+    /* ────────────────────────────────────────
+       RESPONSIVE — TABLET (≤800px)
+    ──────────────────────────────────────── */
+    @media (max-width: 800px) {
+      .nav-links { display: none; }
+      .burger    { display: flex; }
+      .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      .interests-grid { grid-template-columns: 1fr 1fr; }
+      section { padding: 70px 1.2rem; }
     }
 
-    /* ── ANIMATIONS ── */
-    @keyframes fadeDown {
-      from {
-        opacity: 0;
-        transform: translateY(-16px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(24px);
-      transition: opacity .6s ease, transform .6s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
+    /* ────────────────────────────────────────
+       RESPONSIVE — MOBILE (≤480px)
+    ──────────────────────────────────────── */
+    @media (max-width: 480px) {
+      body { cursor: auto; } /* restore cursor on touch */
+      #cursor-dot, #cursor-ring, #cursor-glow { display: none; }
+      .orb { filter: blur(60px); opacity: 0.4; }
+      .orb-1 { width:260px;height:260px; }
+      .orb-2 { width:220px;height:220px; }
+      .orb-3 { width:200px;height:200px; }
+      .orb-4, .orb-5 { display: none; }
+      .hero-name { font-size: clamp(2rem, 9vw, 2.8rem); }
+      .hero-desc { font-size: 0.88rem; }
+      .interests-grid { grid-template-columns: 1fr; }
+      .contact-cards { gap: .8rem; }
+      .contact-card { min-width: 140px; padding: 1.2rem 1.4rem; }
+      .edu-card { flex-direction: column; align-items: flex-start; }
+      .edu-right { text-align: left; }
+      .bio-card { padding: 1.4rem 1.6rem; }
+      .project-card { padding: 1.4rem 1.5rem; }
+      nav { padding: 0 1rem; }
+      .mobile-menu { padding: 1rem 1.2rem; }
+      section { padding: 60px 1rem; }
+      .section-title { font-size: 1.6rem; }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="nav-logo">yumin.chen<span style="color:#8b949e">( )</span></div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#biography">自傳</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#contact">Contact</a></li>
+<!-- CUSTOM CURSOR -->
+<div id="cursor-glow"></div>
+<div id="cursor-ring"></div>
+<div id="cursor-dot"></div>
+
+<!-- ── NAV ── -->
+<nav>
+  <div class="nav-logo">yumin.chen<span style="color:var(--dim)">( )</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#biography">自傳</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <button class="burger" id="burger" aria-label="menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about"     onclick="closeMenu()">About</a>
+  <a href="#biography" onclick="closeMenu()">自傳</a>
+  <a href="#skills"    onclick="closeMenu()">Skills</a>
+  <a href="#projects"  onclick="closeMenu()">Projects</a>
+  <a href="#education" onclick="closeMenu()">Education</a>
+  <a href="#contact"   onclick="closeMenu()">Contact</a>
+</div>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <!-- Orbs -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+  <div class="orb orb-4"></div>
+  <div class="orb orb-5"></div>
+  <!-- Particles -->
+  <canvas id="particles-canvas"></canvas>
+  <!-- Grid -->
+  <div class="hero-grid"></div>
+  <!-- Content -->
+  <div class="hero-content">
+    <div class="hero-tag">🎓 應屆碩士畢業生 · 積極求職中</div>
+    <h1 class="hero-name">陳俞閔 <span class="highlight">Yu-Min Chen</span></h1>
+    <p class="hero-sub">
+      <b>AI 演算法</b> &nbsp;|&nbsp; <b>軟體研發</b> &nbsp;|&nbsp; <b>通訊系統</b>
+    </p>
+    <p class="hero-desc">
+      專精於 AI 演算法優化與系統開發，具備從底層演算法（強化學習、預編碼）到上層應用（Web 全端、容器化部署）的多元開發經驗。
+    </p>
+    <div class="hero-btns">
+      <a href="https://github.com/Weselymachianl" target="_blank" class="btn btn-primary">🐙 GitHub</a>
+      <a href="#about" class="btn btn-outline">了解更多 ↓</a>
+    </div>
+    <div class="hero-badges">
+      <span class="badge">Python</span>
+      <span class="badge">PyTorch</span>
+      <span class="badge">Deep RL</span>
+      <span class="badge">Node.js</span>
+      <span class="badge">Docker</span>
+      <span class="badge">C/C++</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT ── -->
+<section id="about" class="reveal">
+  <p class="section-label">// about me</p>
+  <h2 class="section-title">關於我</h2>
+  <div class="section-divider"></div>
+  <div class="about-grid">
+    <ul class="info-list">
+      <li><div class="info-icon">👤</div><span>陳俞閔 (Yu-Min Chen)</span></li>
+      <li><div class="info-icon">🎓</div><span>國立中正大學・通訊工程研究所</span></li>
+      <li><div class="info-icon">📍</div><span>高雄市, 台灣</span></li>
+      <li><div class="info-icon">✉️</div><span style="color:var(--dim)">（請透過 GitHub 聯繫）</span></li>
+      <li>
+        <div class="info-icon">🐙</div>
+        <a href="https://github.com/Weselymachianl" target="_blank">github.com/Weselymachianl</a>
+      </li>
     </ul>
-  </nav>
+    <div class="about-quote glow-card">
+      <strong>"只要肯學就能掌握"</strong><br/><br/>
+      具備從底層演算法（強化學習、預編碼）到上層應用（Web 跨平台實作、容器化部署）的多元開發經驗。
+      做事嚴謹、條理分明，能冷靜應對突發狀況並高效排除 Bug。
+      善於團隊溝通交流，期待將紮實的學術訓練與解決問題的能力帶入職場。
+    </div>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section id="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
-    <div class="hero-content">
-      <div class="hero-tag">🎓 應屆碩士畢業生 · 積極求職中</div>
-      <h1 class="hero-name">陳俞閔 <span>Yu-Min Chen</span></h1>
-      <p class="hero-sub">
-        <b>AI 演算法</b> &nbsp;|&nbsp; <b>軟體研發</b> &nbsp;|&nbsp; <b>通訊系統</b>
-      </p>
-      <p class="hero-desc">
-        專精於 AI 演算法優化與系統開發，具備從底層演算法（強化學習、預編碼）
-        到上層應用（Web 全端、容器化部署）的多元開發經驗。
-      </p>
-      <div class="hero-btns">
-        <a href="mailto:XXXXXXXXX@gmail.com" class="btn btn-primary">✉️ 聯絡我</a>
-        <a href="https://github.com/Weselymachianl" target="_blank" class="btn btn-outline">
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-            <path
-              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
-          </svg>
-          GitHub
-        </a>
-      </div>
-      <div class="hero-badges">
-        <span class="badge">Python</span>
-        <span class="badge">PyTorch</span>
-        <span class="badge">Deep RL</span>
-        <span class="badge">Node.js</span>
-        <span class="badge">Docker</span>
-        <span class="badge">C/C++</span>
+<!-- ── BIOGRAPHY ── -->
+<section id="biography" class="reveal">
+  <p class="section-label">// autobiography</p>
+  <h2 class="section-title">自傳</h2>
+  <div class="section-divider"></div>
+  <div class="bio-card glow-card">
+    <p class="bio-para">
+      <strong>我是陳俞閔</strong>，目前就讀於<strong>國立中正大學通訊工程研究所</strong>，預計於 2026 年 8 月取得碩士學位。在通訊工程的學習旅途中，我發現自己對於「如何讓系統做出更聰明的決策」這個問題充滿熱情，這也驅使我走向 AI 演算法與通訊系統的跨域研究。
+    </p>
+    <p class="bio-para">
+      大學就讀於<strong>國立高雄科技大學通訊工程學系</strong>，四年的學習過程中，逐漸培養出對演算法設計與系統實作的濃厚興趣。大四專題期間，我獨立完成從演算法研究到跨平台網頁展示的整合性專案——「QR Code 掃描優化與跨平台技術展示系統」，憑藉高實用性與完整的技術整合，<em>榮獲畢業專題佳作</em>，也讓我更確定繼續深造的方向。
+    </p>
+    <p class="bio-para">
+      升上碩士後，研究方向聚焦於 <em>AI 演算法結合通訊系統的應用</em>，目前主要研究流體天線系統（FAS）的聯合最佳化問題，透過結合 ConvCNP 神經過程模型與深度強化學習（Assisted D3QN），在資訊不完整的條件下最大化系統總和速率。研究歷程中不僅深化了我對 PyTorch 的掌握，也培養了嚴謹的實驗設計方法與數據分析能力。
+    </p>
+    <p class="bio-para">
+      在技術廣度上，除了核心的 AI 研究，我也具備全端開發能力，熟悉 Python、C/C++、Node.js 與 Docker 容器化部署，曾實作多人即時聊天室系統並完成容器化部署。我相信技術是解決問題的工具，因此一直保持對新技術的好奇心，並喜歡動手將想法付諸實現。
+    </p>
+    <p class="bio-para">
+      秉持著<em>「只要肯學就能掌握」</em>的積極態度，做事嚴謹、條理分明，善於在團隊中溝通協作。期待能夠將紮實的學術訓練、解決問題的邏輯思維與動手實作的能力帶入職場，在 AI、通訊或軟體開發等領域持續貢獻與成長。
+    </p>
+  </div>
+</section>
+
+<!-- ── SKILLS ── -->
+<section id="skills" class="reveal">
+  <p class="section-label">// tech stack</p>
+  <h2 class="section-title">技術棧</h2>
+  <div class="section-divider"></div>
+  <div class="skills-stack">
+    <div>
+      <p class="skill-group-title">🤖 AI 演算法與通訊</p>
+      <div class="chips">
+        <span class="chip hi">深度強化學習 (DRL)</span>
+        <span class="chip hi">ConvCNP</span>
+        <span class="chip hi">PyTorch</span>
+        <span class="chip">流體天線系統 (FAS)</span>
+        <span class="chip">RZF 預編碼</span>
+        <span class="chip">訊號處理</span>
       </div>
     </div>
-  </section>
+    <div>
+      <p class="skill-group-title">💻 程式語言 &amp; 工具</p>
+      <div class="chips">
+        <span class="chip hi">Python</span>
+        <span class="chip">C / C++</span>
+        <span class="chip">Node.js</span>
+        <span class="chip">Git</span>
+        <span class="chip">Docker</span>
+        <span class="chip">Express.js</span>
+      </div>
+    </div>
+    <div>
+      <p class="skill-group-title">🌐 Web 開發</p>
+      <div class="chips">
+        <span class="chip">HTML5</span>
+        <span class="chip">CSS3</span>
+        <span class="chip">JavaScript</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about" class="reveal">
-    <p class="section-label">// about me</p>
-    <h2 class="section-title">關於我</h2>
-    <div class="section-divider"></div>
-    <div class="about-grid">
-      <ul class="info-list">
-        <li>
-          <div class="icon">👤</div>
-          <span>陳俞閔 (Yu-Min Chen)</span>
-        </li>
-        <li>
-          <div class="icon">🎓</div>
-          <span>國立中正大學・通訊工程研究所</span>
-        </li>
-        <li>
-          <div class="icon">📍</div>
-          <span>高雄市, 台灣</span>
-        </li>
-        <li>
-          <div class="icon">✉️</div>
-          <span style="color:var(--text-dim)">（私人，請透過 GitHub 聯繫）</span>
-        </li>
-        <li>
-          <div class="icon">🐙</div>
-          <a href="https://github.com/Weselymachianl" target="_blank">github.com/Weselymachianl</a>
-        </li>
+<!-- ── PROJECTS ── -->
+<section id="projects" class="reveal">
+  <p class="section-label">// research &amp; projects</p>
+  <h2 class="section-title">研究與開發專案</h2>
+  <div class="section-divider"></div>
+  <div class="projects-list">
+
+    <div class="project-card glow-card">
+      <p class="project-title">📡 基於 ConvCNP 輔助強化學習之流體天線聯合優化</p>
+      <div class="project-tags">
+        <span class="ptag ptag-r">碩士研究</span>
+        <span class="ptag ptag-g">2024 – Present</span>
+      </div>
+      <ul class="project-desc">
+        <li>利用純 Python 獨立開發之通訊系統 AI 優化演算法</li>
+        <li>針對多用戶流體天線，結合 RZF 預編碼與改良版強化學習 (Assisted D3QN)，在僅具部分埠口資訊下最大化系統總和速率</li>
+        <li>導入卷積條件神經過程 (ConvCNP) 與漸進式學習解決傳統 DRL 收斂瓶頸</li>
+        <li>採 3 組隨機種子嚴謹驗證，確保模型具備高度統計可信度</li>
       </ul>
-      <div class="about-quote">
-        <strong>"只要肯學就能掌握"</strong><br /><br />
-        具備從底層演算法（強化學習、預編碼）到上層應用（Web 跨平台實作、容器化部署）的多元開發經驗。
-        做事嚴謹、條理分明，能冷靜應對突發狀況並高效排除 Bug。
-        善於團隊溝通交流，期待將紮實的學術訓練與解決問題的能力帶入職場。
+      <div class="project-chips">
+        <span class="pchip">Python</span><span class="pchip">PyTorch</span>
+        <span class="pchip">ConvCNP</span><span class="pchip">Deep RL</span>
+        <span class="pchip">FAS</span><span class="pchip">RZF Precoding</span>
       </div>
     </div>
-  </section>
 
-  <!-- BIOGRAPHY -->
-  <section id="biography" class="reveal">
-    <p class="section-label">// autobiography</p>
-    <h2 class="section-title">自傳</h2>
-    <div class="section-divider"></div>
-    <div class="bio-card">
-      <p class="bio-para">
-        <strong>我是陳俞閔</strong>，目前就讀於<strong>國立中正大學通訊工程研究所</strong>，預計於 2026 年 8
-        月取得碩士學位。在通訊工程的學習旅途中，我發現自己對於「如何讓系統做出更聰明的決策」這個問題充滿熱情，這也驅使我走向 AI 演算法與通訊系統的跨域研究。
-      </p>
-      <p class="bio-para">
-        大學就讀於<strong>國立高雄科技大學通訊工程學系</strong>，四年的學習過程中，逐漸培養出對演算法設計與系統實作的濃厚興趣。大四專題期間，我獨立完成從演算法研究到跨平台網頁展示的整合性專案——「QR Code
-        掃描優化與跨平台技術展示系統」。這個專案讓我第一次體驗到從零到一完整建構一個系統的成就感，憑藉高實用性與完整的技術整合，<em>榮獲畢業專題佳作</em>，也讓我更確定繼續深造的方向。
-      </p>
-      <p class="bio-para">
-        升上碩士後，研究方向聚焦於 <em>AI 演算法結合通訊系統的應用</em>，目前主要研究流體天線系統（FAS）的聯合最佳化問題，透過結合 ConvCNP 神經過程模型與深度強化學習（Assisted
-        D3QN），在資訊不完整的條件下最大化系統總和速率。研究歷程中不僅深化了我對機器學習框架 PyTorch 的掌握，也培養了嚴謹的實驗設計方法與數據分析能力。
-      </p>
-      <p class="bio-para">
-        在技術廣度上，除了核心的 AI 研究，我也具備全端開發能力，熟悉 Python、C/C++、Node.js 與 Docker
-        容器化部署，曾實作多人即時聊天室系統並完成容器化部署。我相信技術是解決問題的工具，而不是終點，因此我一直保持對新技術的好奇心，並喜歡動手將想法付諸實現。
-      </p>
-      <p class="bio-para">
-        秉持著<em>「只要肯學就能掌握」</em>的積極態度，做事嚴謹、條理分明，善於在團隊中溝通協作。期待能夠將紮實的學術訓練、解決問題的邏輯思維與動手實作的能力帶入職場，在 AI、通訊或軟體開發等領域持續貢獻與成長。
-      </p>
+    <div class="project-card glow-card">
+      <p class="project-title">📷 QR Code 掃描優化與跨平台技術展示系統 🏆</p>
+      <div class="project-tags">
+        <span class="ptag ptag-a">大學專題佳作</span>
+        <span class="ptag ptag-g">2023 – 2024</span>
+      </div>
+      <ul class="project-desc">
+        <li>從演算法開發到網頁全端實作的整合性專案</li>
+        <li>使用 Python 核心技術優化惡劣環境下的 QR Code 辨識率</li>
+        <li>透過 Node.js 與 HTML/CSS/JS 建立互動式展示平台</li>
+        <li>憑藉高實用性與跨技術整合，<strong>榮獲畢業專題佳作</strong></li>
+      </ul>
+      <div class="project-chips">
+        <span class="pchip">Python</span><span class="pchip">Node.js</span>
+        <span class="pchip">HTML/CSS/JS</span><span class="pchip">影像處理</span>
+      </div>
     </div>
-  </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="reveal">
-    <p class="section-label">// tech stack</p>
-    <h2 class="section-title">技術棧</h2>
-    <div class="section-divider"></div>
-    <div class="skills-grid">
+    <div class="project-card glow-card">
+      <p class="project-title">💬 Node.js 多人聊天室與 Docker 容器化部署</p>
+      <div class="project-tags">
+        <span class="ptag ptag-g">雲端運算課程實作</span>
+        <span class="ptag ptag-g">2023</span>
+      </div>
+      <ul class="project-desc">
+        <li>使用 Node.js 與 Express 框架開發後端，打造支援多人即時互動的簡易聊天室</li>
+        <li>運用 Docker 將專案獨立容器化，熟悉 Image 打包與 Container 運行流程</li>
+        <li>實踐服務部署與開發環境一致性的概念</li>
+      </ul>
+      <div class="project-chips">
+        <span class="pchip">Node.js</span><span class="pchip">Express</span>
+        <span class="pchip">Docker</span><span class="pchip">WebSocket</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── EDUCATION ── -->
+<section id="education" class="reveal">
+  <p class="section-label">// education</p>
+  <h2 class="section-title">學歷</h2>
+  <div class="section-divider"></div>
+  <div class="edu-list">
+    <div class="edu-card glow-card">
       <div>
-        <p class="skill-group-title">🤖 AI 演算法與通訊</p>
-        <div class="chips">
-          <span class="chip highlight">深度強化學習 (DRL)</span>
-          <span class="chip highlight">ConvCNP</span>
-          <span class="chip highlight">PyTorch</span>
-          <span class="chip">流體天線系統 (FAS)</span>
-          <span class="chip">RZF 預編碼</span>
-          <span class="chip">訊號處理</span>
-        </div>
+        <p class="edu-school">🏫 國立中正大學</p>
+        <p class="edu-dept">通訊工程研究所</p>
       </div>
+      <div class="edu-right">
+        <span class="edu-degree">碩士 MASTER</span>
+        <p class="edu-period">2024/09 → 2026/08</p>
+      </div>
+    </div>
+    <div class="edu-card glow-card">
       <div>
-        <p class="skill-group-title">💻 程式語言 & 工具</p>
-        <div class="chips">
-          <span class="chip highlight">Python</span>
-          <span class="chip">C / C++</span>
-          <span class="chip">Node.js</span>
-          <span class="chip">Git</span>
-          <span class="chip">Docker</span>
-          <span class="chip">Express.js</span>
-        </div>
+        <p class="edu-school">🏫 國立高雄科技大學</p>
+        <p class="edu-dept">通訊工程學系</p>
       </div>
-      <div>
-        <p class="skill-group-title">🌐 Web 開發</p>
-        <div class="chips">
-          <span class="chip">HTML5</span>
-          <span class="chip">CSS3</span>
-          <span class="chip">JavaScript</span>
-        </div>
+      <div class="edu-right">
+        <span class="edu-degree">學士 BACHELOR</span>
+        <p class="edu-period">2020/09 → 2024/06</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="reveal">
-    <p class="section-label">// research & projects</p>
-    <h2 class="section-title">研究與開發專案</h2>
-    <div class="section-divider"></div>
-    <div class="projects-list">
-
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-title">📡 基於 ConvCNP 輔助強化學習之流體天線聯合優化</span>
-        </div>
-        <div class="project-meta">
-          <span class="project-tag tag-research">碩士研究</span>
-          <span class="project-tag tag-cloud">2024 – Present</span>
-        </div>
-        <ul class="project-desc">
-          <li>利用純 Python 獨立開發之通訊系統 AI 優化演算法</li>
-          <li>針對多用戶流體天線，結合 RZF 預編碼與改良版強化學習 (Assisted D3QN)，在僅具部分埠口資訊下最大化系統總和速率</li>
-          <li>導入卷積條件神經過程 (ConvCNP) 與漸進式學習解決傳統 DRL 收斂瓶頸</li>
-          <li>採 3 組隨機種子嚴謹驗證，確保模型具備高度統計可信度</li>
-        </ul>
-        <div class="project-chips">
-          <span class="project-chip">Python</span>
-          <span class="project-chip">PyTorch</span>
-          <span class="project-chip">ConvCNP</span>
-          <span class="project-chip">Deep RL</span>
-          <span class="project-chip">FAS</span>
-          <span class="project-chip">RZF Precoding</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-title">📷 QR Code 掃描優化與跨平台技術展示系統 🏆</span>
-        </div>
-        <div class="project-meta">
-          <span class="project-tag tag-award">大學專題佳作</span>
-          <span class="project-tag tag-cloud">2023 – 2024</span>
-        </div>
-        <ul class="project-desc">
-          <li>從演算法開發到網頁全端實作的整合性專案</li>
-          <li>使用 Python 核心技術優化惡劣環境下的 QR Code 辨識率</li>
-          <li>透過 Node.js 與 HTML/CSS/JS 建立互動式展示平台</li>
-          <li>憑藉高實用性與跨技術整合的完整度，<strong>榮獲畢業專題佳作</strong></li>
-        </ul>
-        <div class="project-chips">
-          <span class="project-chip">Python</span>
-          <span class="project-chip">Node.js</span>
-          <span class="project-chip">HTML/CSS/JS</span>
-          <span class="project-chip">影像處理</span>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-header">
-          <span class="project-title">💬 Node.js 多人聊天室與 Docker 容器化部署</span>
-        </div>
-        <div class="project-meta">
-          <span class="project-tag tag-cloud">雲端運算課程實作</span>
-          <span class="project-tag tag-cloud">2023</span>
-        </div>
-        <ul class="project-desc">
-          <li>使用 Node.js 與 Express 框架開發後端，打造支援多人即時互動的簡易聊天室</li>
-          <li>運用 Docker 將專案獨立容器化，熟悉 Image 打包與 Container 運行流程</li>
-          <li>實踐服務部署與開發環境一致性的概念</li>
-        </ul>
-        <div class="project-chips">
-          <span class="project-chip">Node.js</span>
-          <span class="project-chip">Express</span>
-          <span class="project-chip">Docker</span>
-          <span class="project-chip">WebSocket</span>
-        </div>
-      </div>
-
+<!-- ── INTERESTS ── -->
+<section id="interests" class="reveal">
+  <p class="section-label">// interests</p>
+  <h2 class="section-title">興趣愛好</h2>
+  <div class="section-divider"></div>
+  <div class="interests-grid">
+    <div class="interest-card glow-card">
+      <div class="interest-icon">🏸</div>
+      <p class="interest-name">羽球</p>
+      <p class="interest-desc">熱愛運動，享受團隊合作與競技的樂趣</p>
     </div>
-  </section>
-
-  <!-- EDUCATION -->
-  <section id="education" class="reveal">
-    <p class="section-label">// education</p>
-    <h2 class="section-title">學歷</h2>
-    <div class="section-divider"></div>
-    <div class="edu-list">
-      <div class="edu-card">
-        <div>
-          <p class="edu-school">🏫 國立中正大學</p>
-          <p class="edu-dept">通訊工程研究所</p>
-        </div>
-        <div class="edu-right">
-          <span class="edu-degree">碩士 MASTER</span>
-          <p class="edu-period">2024/09 → 2026/08</p>
-        </div>
-      </div>
-      <div class="edu-card">
-        <div>
-          <p class="edu-school">🏫 國立高雄科技大學</p>
-          <p class="edu-dept">通訊工程學系</p>
-        </div>
-        <div class="edu-right">
-          <span class="edu-degree">學士 BACHELOR</span>
-          <p class="edu-period">2020/09 → 2024/06</p>
-        </div>
-      </div>
+    <div class="interest-card glow-card">
+      <div class="interest-icon">🤖</div>
+      <p class="interest-name">鑽研 AI 技術</p>
+      <p class="interest-desc">持續學習並動手實作新演算法</p>
     </div>
-  </section>
-
-  <!-- INTERESTS -->
-  <section id="interests" class="reveal">
-    <p class="section-label">// interests</p>
-    <h2 class="section-title">興趣愛好</h2>
-    <div class="section-divider"></div>
-    <div class="interests-grid">
-      <div class="interest-card">
-        <div class="interest-icon">🏸</div>
-        <p class="interest-name">羽球</p>
-        <p class="interest-desc">熱愛運動，享受團隊合作與競技的樂趣</p>
-      </div>
-      <div class="interest-card">
-        <div class="interest-icon">🤖</div>
-        <p class="interest-name">鑽研 AI 技術</p>
-        <p class="interest-desc">持續學習並動手實作新演算法</p>
-      </div>
-      <div class="interest-card">
-        <div class="interest-icon">🛠️</div>
-        <p class="interest-name">Side Projects</p>
-        <p class="interest-desc">喜歡把想法化為可運行的程式</p>
-      </div>
+    <div class="interest-card glow-card">
+      <div class="interest-icon">🛠️</div>
+      <p class="interest-name">Side Projects</p>
+      <p class="interest-desc">喜歡把想法化為可運行的程式</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="reveal">
-    <p class="section-label">// contact</p>
-    <h2 class="section-title">聯絡我</h2>
-    <div class="section-divider"
-      style="margin-left:auto;margin-right:auto;background:linear-gradient(90deg,transparent,var(--accent),transparent)">
+<!-- ── CONTACT ── -->
+<section id="contact" class="reveal">
+  <p class="section-label">// contact</p>
+  <h2 class="section-title">聯絡我</h2>
+  <div class="section-divider" style="margin:0.5rem auto 1rem;background:linear-gradient(90deg,transparent,var(--red),var(--purple),transparent)"></div>
+  <div class="contact-cards">
+    <a href="https://github.com/Weselymachianl" target="_blank" class="contact-card glow-card">
+      <div class="contact-icon">🐙</div>
+      <p class="contact-label">GitHub</p>
+      <p class="contact-value">Weselymachianl</p>
+    </a>
+    <div class="contact-card glow-card">
+      <div class="contact-icon">📍</div>
+      <p class="contact-label">Location</p>
+      <p class="contact-value">高雄市, 台灣</p>
     </div>
-    <div class="contact-cards">
-      <a href="https://github.com/Weselymachianl" target="_blank" class="contact-card">
-        <div class="contact-icon">🐙</div>
-        <p class="contact-label">GitHub</p>
-        <p class="contact-value">Weselymachianl</p>
-      </a>
-      <div class="contact-card">
-        <div class="contact-icon">📍</div>
-        <p class="contact-label">Location</p>
-        <p class="contact-value">高雄市, 台灣</p>
-      </div>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <footer>
-    <p>Designed & built by <span>陳俞閔 Yu-Min Chen</span> · 2026</p>
-  </footer>
+<footer>
+  <p>Designed &amp; built by <span>陳俞閔 Yu-Min Chen</span> · 2026</p>
+</footer>
 
-  <script>
-    // Scroll reveal
-    const observer = new IntersectionObserver(
-      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
-      { threshold: 0.1 }
-    );
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+<script>
+  /* ── Hamburger ── */
+  const burger = document.getElementById('burger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  function closeMenu() {
+    burger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  }
+
+  /* ── Custom Cursor ── */
+  const dot  = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+  const glow = document.getElementById('cursor-glow');
+  let mx = window.innerWidth/2, my = window.innerHeight/2;
+  let rx = mx, ry = my;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    dot.style.left  = mx + 'px';
+    dot.style.top   = my + 'px';
+    glow.style.left = mx + 'px';
+    glow.style.top  = my + 'px';
+  });
+
+  // Ring follows with slight lag
+  function animRing() {
+    rx += (mx - rx) * 0.18;
+    ry += (my - ry) * 0.18;
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+    requestAnimationFrame(animRing);
+  }
+  animRing();
+
+  /* ── Scroll Reveal ── */
+  const revealObserver = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.08 }
+  );
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  /* ── Canvas Particles (Hero only) ── */
+  const canvas = document.getElementById('particles-canvas');
+  const ctx    = canvas.getContext('2d');
+  function resizeCanvas() {
+    const hero = document.getElementById('hero');
+    canvas.width  = hero.offsetWidth;
+    canvas.height = hero.offsetHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
+
+  const isMobile = () => window.innerWidth <= 480;
+  const COLORS = ['#e94560','#00d4ff','#8b5cf6','#f97316','#10b981','#ffffff'];
+  const COUNT  = isMobile() ? 40 : 80;
+
+  const particles = Array.from({ length: COUNT }, () => ({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    r: Math.random() * 1.4 + 0.4,
+    dx: (Math.random() - 0.5) * 0.55,
+    dy: (Math.random() - 0.5) * 0.55,
+    color: COLORS[Math.floor(Math.random() * COLORS.length)],
+    alpha: Math.random() * 0.55 + 0.2,
+  }));
+
+  function drawParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    particles.forEach(p => {
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = p.color;
+      ctx.globalAlpha = p.alpha;
+      ctx.fill();
+      p.x += p.dx;
+      p.y += p.dy;
+      if (p.x < 0 || p.x > canvas.width)  p.dx *= -1;
+      if (p.y < 0 || p.y > canvas.height)  p.dy *= -1;
+    });
+    ctx.globalAlpha = 1;
+    if (!isMobile()) {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const d = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+          if (d < 100) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = 'rgba(255,255,255,' + (0.07 * (1 - d/100)) + ')';
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+    requestAnimationFrame(drawParticles);
+  }
+  drawParticles();
+</script>
 </body>
-
 </html>
