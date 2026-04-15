@@ -1,29 +1,40 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>陳俞閔 Yu-Min Chen | AI 演算法工程師</title>
   <meta name="description" content="陳俞閔的個人介紹頁面，專精 AI 演算法、深度強化學習與全端開發的應屆碩士畢業生。" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap"
+    rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg:         #0d1117;
-      --bg2:        #161b22;
-      --bg3:        #1c2128;
-      --accent:     #e94560;
-      --accent2:    #0f3460;
-      --blue:       #58a6ff;
-      --text:       #c9d1d9;
-      --text-dim:   #8b949e;
-      --border:     #30363d;
-      --card-glow:  rgba(233, 69, 96, 0.08);
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    html { scroll-behavior: smooth; }
+    :root {
+      --bg: #0d1117;
+      --bg2: #161b22;
+      --bg3: #1c2128;
+      --accent: #e94560;
+      --accent2: #0f3460;
+      --blue: #58a6ff;
+      --text: #c9d1d9;
+      --text-dim: #8b949e;
+      --border: #30363d;
+      --card-glow: rgba(233, 69, 96, 0.08);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       background: var(--bg);
@@ -34,20 +45,36 @@
     }
 
     /* ── SCROLLBAR ── */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 3px; }
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--accent);
+      border-radius: 3px;
+    }
 
     /* ── NAV ── */
     nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(13,17,23,0.85);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(13, 17, 23, 0.85);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       padding: 0 2rem;
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       height: 56px;
     }
+
     .nav-logo {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.95rem;
@@ -55,51 +82,91 @@
       font-weight: 600;
       letter-spacing: 0.5px;
     }
-    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
     .nav-links a {
-      color: var(--text-dim); text-decoration: none;
-      font-size: 0.85rem; font-weight: 500;
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
       transition: color .2s;
     }
-    .nav-links a:hover { color: var(--text); }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
 
     /* ── HERO ── */
     #hero {
       min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       position: relative;
       padding: 80px 2rem 2rem;
       overflow: hidden;
     }
+
     .hero-bg {
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(233,69,96,0.12) 0%, transparent 65%),
-                  radial-gradient(ellipse 60% 50% at 80% 100%, rgba(15,52,96,0.3) 0%, transparent 60%);
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(233, 69, 96, 0.12) 0%, transparent 65%),
+        radial-gradient(ellipse 60% 50% at 80% 100%, rgba(15, 52, 96, 0.3) 0%, transparent 60%);
     }
+
     .hero-grid {
-      position: absolute; inset: 0;
+      position: absolute;
+      inset: 0;
       background-image: linear-gradient(var(--border) 1px, transparent 1px),
-                        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
       background-size: 60px 60px;
       opacity: 0.2;
     }
+
     .hero-content {
-      position: relative; z-index: 1;
-      text-align: center; max-width: 720px;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 720px;
     }
+
     .hero-tag {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: rgba(233,69,96,0.1);
-      border: 1px solid rgba(233,69,96,0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(233, 69, 96, 0.1);
+      border: 1px solid rgba(233, 69, 96, 0.3);
       border-radius: 999px;
       padding: 4px 14px;
-      font-size: 0.78rem; font-weight: 500;
+      font-size: 0.78rem;
+      font-weight: 500;
       color: var(--accent);
       margin-bottom: 1.5rem;
       animation: fadeDown .6s ease both;
     }
-    .hero-tag::before { content: "●"; font-size: 0.55rem; animation: pulse 2s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+    .hero-tag::before {
+      content: "●";
+      font-size: 0.55rem;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .3
+      }
+    }
 
     .hero-name {
       font-size: clamp(2.6rem, 6vw, 4rem);
@@ -107,80 +174,127 @@
       line-height: 1.15;
       margin-bottom: 0.4rem;
       background: linear-gradient(135deg, #ffffff 0%, #a8b2d8 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
       animation: fadeDown .7s ease .1s both;
     }
+
     .hero-name span {
       background: linear-gradient(135deg, var(--accent), #ff6b6b);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
+
     .hero-sub {
-      font-size: 1rem; color: var(--text-dim); margin-bottom: 1.8rem;
+      font-size: 1rem;
+      color: var(--text-dim);
+      margin-bottom: 1.8rem;
       animation: fadeDown .7s ease .2s both;
     }
-    .hero-sub b { color: var(--blue); }
+
+    .hero-sub b {
+      color: var(--blue);
+    }
+
     .hero-desc {
-      font-size: 0.95rem; color: var(--text-dim); max-width: 560px;
+      font-size: 0.95rem;
+      color: var(--text-dim);
+      max-width: 560px;
       margin: 0 auto 2.2rem;
       animation: fadeDown .7s ease .3s both;
     }
+
     .hero-btns {
-      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
       animation: fadeDown .7s ease .4s both;
     }
+
     .btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      padding: 10px 22px; border-radius: 8px;
-      font-size: 0.9rem; font-weight: 600;
-      text-decoration: none; transition: all .2s;
-      cursor: pointer; border: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .2s;
+      cursor: pointer;
+      border: none;
     }
+
     .btn-primary {
-      background: var(--accent); color: #fff;
-      box-shadow: 0 0 20px rgba(233,69,96,0.35);
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 20px rgba(233, 69, 96, 0.35);
     }
+
     .btn-primary:hover {
       background: #ff6b6b;
-      box-shadow: 0 0 30px rgba(233,69,96,0.55);
+      box-shadow: 0 0 30px rgba(233, 69, 96, 0.55);
       transform: translateY(-2px);
     }
+
     .btn-outline {
       background: transparent;
       border: 1px solid var(--border);
       color: var(--text);
     }
+
     .btn-outline:hover {
       border-color: var(--accent);
       color: var(--accent);
       transform: translateY(-2px);
     }
+
     .hero-badges {
-      display: flex; gap: .6rem; flex-wrap: wrap; justify-content: center;
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+      justify-content: center;
       margin-top: 2rem;
       animation: fadeDown .7s ease .5s both;
     }
+
     .badge {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 6px; padding: 4px 12px;
-      font-size: 0.78rem; color: var(--text-dim);
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 0.78rem;
+      color: var(--text-dim);
       font-family: 'JetBrains Mono', monospace;
     }
 
     /* ── SECTION ── */
-    section { padding: 80px 2rem; max-width: 900px; margin: 0 auto; }
+    section {
+      padding: 80px 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
     .section-label {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.75rem; color: var(--accent);
-      letter-spacing: 2px; text-transform: uppercase;
+      font-size: 0.75rem;
+      color: var(--accent);
+      letter-spacing: 2px;
+      text-transform: uppercase;
       margin-bottom: .5rem;
     }
+
     .section-title {
-      font-size: 1.9rem; font-weight: 700;
+      font-size: 1.9rem;
+      font-weight: 700;
       margin-bottom: 2.5rem;
       color: #fff;
     }
+
     .section-divider {
-      width: 40px; height: 3px;
+      width: 40px;
+      height: 3px;
       background: linear-gradient(90deg, var(--accent), transparent);
       border-radius: 2px;
       margin: .5rem 0 2.5rem;
@@ -188,508 +302,770 @@
 
     /* ── ABOUT ── */
     .about-grid {
-      display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3rem;
       align-items: start;
     }
-    @media(max-width:640px){ .about-grid{ grid-template-columns:1fr; } }
-    .info-list { list-style: none; display: flex; flex-direction: column; gap: .9rem; }
+
+    @media(max-width:640px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .9rem;
+    }
+
     .info-list li {
-      display: flex; align-items: center; gap: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
       font-size: 0.9rem;
     }
+
     .info-list .icon {
-      width: 34px; height: 34px; flex-shrink: 0;
-      background: var(--bg3); border: 1px solid var(--border);
+      width: 34px;
+      height: 34px;
+      flex-shrink: 0;
+      background: var(--bg3);
+      border: 1px solid var(--border);
       border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 1rem;
     }
-    .info-list a { color: var(--blue); text-decoration: none; }
-    .info-list a:hover { text-decoration: underline; }
-    .about-quote {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-left: 3px solid var(--accent);
-      border-radius: 8px; padding: 1.4rem 1.6rem;
-      font-size: 0.9rem; color: var(--text-dim);
-      font-style: italic; line-height: 1.8;
+
+    .info-list a {
+      color: var(--blue);
+      text-decoration: none;
     }
-    .about-quote strong { color: var(--text); font-style: normal; }
+
+    .info-list a:hover {
+      text-decoration: underline;
+    }
+
+    .about-quote {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 1.4rem 1.6rem;
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    .about-quote strong {
+      color: var(--text);
+      font-style: normal;
+    }
 
     /* ── SKILLS ── */
-    .skills-grid { display: flex; flex-direction: column; gap: 1.8rem; }
+    .skills-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
     .skill-group-title {
-      font-size: 0.8rem; font-weight: 600;
-      color: var(--accent); text-transform: uppercase;
-      letter-spacing: 1.5px; margin-bottom: .8rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: .8rem;
       font-family: 'JetBrains Mono', monospace;
     }
-    .chips { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
     .chip {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 6px; padding: 5px 14px;
-      font-size: 0.83rem; color: var(--text);
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 5px 14px;
+      font-size: 0.83rem;
+      color: var(--text);
       transition: all .2s;
     }
+
     .chip:hover {
       border-color: var(--accent);
       color: var(--accent);
-      background: rgba(233,69,96,.06);
+      background: rgba(233, 69, 96, .06);
       transform: translateY(-1px);
     }
+
     .chip.highlight {
-      background: rgba(233,69,96,.1);
-      border-color: rgba(233,69,96,.35);
+      background: rgba(233, 69, 96, .1);
+      border-color: rgba(233, 69, 96, .35);
       color: var(--accent);
     }
 
     /* ── PROJECTS ── */
-    .projects-list { display: flex; flex-direction: column; gap: 1.4rem; }
+    .projects-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.4rem;
+    }
+
     .project-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 12px; padding: 1.6rem 1.8rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.6rem 1.8rem;
       transition: all .25s;
-      position: relative; overflow: hidden;
+      position: relative;
+      overflow: hidden;
     }
+
     .project-card::before {
-      content: ''; position: absolute;
-      top: 0; left: 0; right: 0; height: 2px;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
       background: linear-gradient(90deg, var(--accent), transparent);
-      opacity: 0; transition: opacity .25s;
+      opacity: 0;
+      transition: opacity .25s;
     }
+
     .project-card:hover {
-      border-color: rgba(233,69,96,.4);
+      border-color: rgba(233, 69, 96, .4);
       background: var(--bg3);
       transform: translateY(-3px);
-      box-shadow: 0 8px 32px rgba(0,0,0,.4), 0 0 0 1px rgba(233,69,96,.1);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, .4), 0 0 0 1px rgba(233, 69, 96, .1);
     }
-    .project-card:hover::before { opacity: 1; }
-    .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: .8rem; }
-    .project-title { font-size: 1.05rem; font-weight: 600; color: #fff; }
-    .project-meta { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: .8rem; }
+
+    .project-card:hover::before {
+      opacity: 1;
+    }
+
+    .project-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: .8rem;
+    }
+
+    .project-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .project-meta {
+      display: flex;
+      gap: .5rem;
+      flex-wrap: wrap;
+      margin-bottom: .8rem;
+    }
+
     .project-tag {
-      font-size: 0.72rem; padding: 2px 10px; border-radius: 999px;
+      font-size: 0.72rem;
+      padding: 2px 10px;
+      border-radius: 999px;
       font-weight: 500;
     }
-    .tag-research { background: rgba(88,166,255,.15); color: #58a6ff; }
-    .tag-award    { background: rgba(210,153,34,.15);  color: #e3b341; }
-    .tag-cloud    { background: rgba(63,185,80,.15);  color: #3fb950; }
-    .project-desc { font-size: 0.88rem; color: var(--text-dim); line-height: 1.75; margin-bottom: 1rem; }
-    .project-desc li { margin-left: 1rem; margin-bottom: .3rem; }
-    .project-chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+
+    .tag-research {
+      background: rgba(88, 166, 255, .15);
+      color: #58a6ff;
+    }
+
+    .tag-award {
+      background: rgba(210, 153, 34, .15);
+      color: #e3b341;
+    }
+
+    .tag-cloud {
+      background: rgba(63, 185, 80, .15);
+      color: #3fb950;
+    }
+
+    .project-desc {
+      font-size: 0.88rem;
+      color: var(--text-dim);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .project-desc li {
+      margin-left: 1rem;
+      margin-bottom: .3rem;
+    }
+
+    .project-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+    }
+
     .project-chip {
       font-family: 'JetBrains Mono', monospace;
-      font-size: 0.73rem; padding: 2px 8px;
-      background: var(--bg); border: 1px solid var(--border);
-      border-radius: 4px; color: var(--text-dim);
+      font-size: 0.73rem;
+      padding: 2px 8px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--text-dim);
     }
 
     /* ── EDUCATION ── */
-    .edu-list { display: flex; flex-direction: column; gap: 1rem; }
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
     .edu-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 12px; padding: 1.3rem 1.6rem;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 1rem; flex-wrap: wrap;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.3rem 1.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
       transition: border-color .2s;
     }
-    .edu-card:hover { border-color: rgba(233,69,96,.4); }
-    .edu-school { font-size: 0.8rem; color: var(--text-dim); margin-bottom: .2rem; }
-    .edu-dept   { font-size: 1rem; font-weight: 600; color: #fff; }
-    .edu-right  { text-align: right; }
+
+    .edu-card:hover {
+      border-color: rgba(233, 69, 96, .4);
+    }
+
+    .edu-school {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      margin-bottom: .2rem;
+    }
+
+    .edu-dept {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .edu-right {
+      text-align: right;
+    }
+
     .edu-degree {
       display: inline-block;
-      background: rgba(233,69,96,.12); border: 1px solid rgba(233,69,96,.3);
-      color: var(--accent); border-radius: 6px;
-      padding: 2px 10px; font-size: 0.75rem; font-weight: 600;
+      background: rgba(233, 69, 96, .12);
+      border: 1px solid rgba(233, 69, 96, .3);
+      color: var(--accent);
+      border-radius: 6px;
+      padding: 2px 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
       margin-bottom: .3rem;
     }
-    .edu-period { font-size: 0.82rem; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; }
+
+    .edu-period {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+    }
 
     /* ── BIOGRAPHY ── */
     .bio-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 12px; padding: 2rem 2.2rem;
-      position: relative; overflow: hidden;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem 2.2rem;
+      position: relative;
+      overflow: hidden;
     }
+
     .bio-card::before {
       content: '\201C';
-      position: absolute; top: -10px; left: 16px;
-      font-size: 8rem; color: rgba(233,69,96,0.08);
-      font-family: Georgia, serif; line-height: 1;
+      position: absolute;
+      top: -10px;
+      left: 16px;
+      font-size: 8rem;
+      color: rgba(233, 69, 96, 0.08);
+      font-family: Georgia, serif;
+      line-height: 1;
       pointer-events: none;
     }
+
     .bio-para {
-      font-size: 0.95rem; color: var(--text-dim);
-      line-height: 1.9; margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+      color: var(--text-dim);
+      line-height: 1.9;
+      margin-bottom: 1.2rem;
     }
-    .bio-para:last-child { margin-bottom: 0; }
-    .bio-para strong { color: var(--text); }
-    .bio-para em { color: var(--accent); font-style: normal; font-weight: 600; }
+
+    .bio-para:last-child {
+      margin-bottom: 0;
+    }
+
+    .bio-para strong {
+      color: var(--text);
+    }
+
+    .bio-para em {
+      color: var(--accent);
+      font-style: normal;
+      font-weight: 600;
+    }
 
     /* ── INTERESTS ── */
-    .interests-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 1rem; }
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
     .interest-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 12px; padding: 1.4rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem;
       transition: all .2s;
     }
+
     .interest-card:hover {
-      border-color: rgba(233,69,96,.4);
+      border-color: rgba(233, 69, 96, .4);
       transform: translateY(-3px);
     }
-    .interest-icon { font-size: 2rem; margin-bottom: .6rem; }
-    .interest-name { font-weight: 600; color: #fff; margin-bottom: .3rem; }
-    .interest-desc { font-size: 0.82rem; color: var(--text-dim); }
+
+    .interest-icon {
+      font-size: 2rem;
+      margin-bottom: .6rem;
+    }
+
+    .interest-name {
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: .3rem;
+    }
+
+    .interest-desc {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+    }
 
     /* ── CONTACT ── */
-    #contact { text-align: center; }
+    #contact {
+      text-align: center;
+    }
+
     .contact-cards {
-      display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
       margin-bottom: 2rem;
     }
+
     .contact-card {
-      background: var(--bg2); border: 1px solid var(--border);
-      border-radius: 12px; padding: 1.4rem 2rem;
-      text-decoration: none; color: var(--text);
-      transition: all .2s; min-width: 160px;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.4rem 2rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: all .2s;
+      min-width: 160px;
     }
+
     .contact-card:hover {
       border-color: var(--accent);
       transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(233,69,96,.15);
+      box-shadow: 0 8px 24px rgba(233, 69, 96, .15);
     }
-    .contact-icon { font-size: 1.8rem; margin-bottom: .5rem; }
-    .contact-label { font-size: 0.72rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px; margin-bottom: .2rem; }
-    .contact-value { font-size: 0.88rem; font-weight: 500; }
+
+    .contact-icon {
+      font-size: 1.8rem;
+      margin-bottom: .5rem;
+    }
+
+    .contact-label {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: .2rem;
+    }
+
+    .contact-value {
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
 
     /* ── FOOTER ── */
     footer {
       border-top: 1px solid var(--border);
-      text-align: center; padding: 2rem;
-      font-size: 0.8rem; color: var(--text-dim);
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.8rem;
+      color: var(--text-dim);
       font-family: 'JetBrains Mono', monospace;
     }
-    footer span { color: var(--accent); }
+
+    footer span {
+      color: var(--accent);
+    }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeDown {
-      from { opacity:0; transform:translateY(-16px); }
-      to   { opacity:1; transform:translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(-16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
+
     .reveal {
-      opacity: 0; transform: translateY(24px);
+      opacity: 0;
+      transform: translateY(24px);
       transition: opacity .6s ease, transform .6s ease;
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">yumin.chen<span style="color:#8b949e">( )</span></div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#biography">自傳</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-content">
-    <div class="hero-tag">🎓 應屆碩士畢業生 · 積極求職中</div>
-    <h1 class="hero-name">陳俞閔 <span>Yu-Min Chen</span></h1>
-    <p class="hero-sub">
-      <b>AI 演算法</b> &nbsp;|&nbsp; <b>軟體研發</b> &nbsp;|&nbsp; <b>通訊系統</b>
-    </p>
-    <p class="hero-desc">
-      專精於 AI 演算法優化與系統開發，具備從底層演算法（強化學習、預編碼）
-      到上層應用（Web 全端、容器化部署）的多元開發經驗。
-    </p>
-    <div class="hero-btns">
-      <a href="mailto:qazwsopp@gmail.com" class="btn btn-primary">✉️ 聯絡我</a>
-      <a href="https://github.com/Weselymachianl" target="_blank" class="btn btn-outline">
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
-        GitHub
-      </a>
-    </div>
-    <div class="hero-badges">
-      <span class="badge">Python</span>
-      <span class="badge">PyTorch</span>
-      <span class="badge">Deep RL</span>
-      <span class="badge">Node.js</span>
-      <span class="badge">Docker</span>
-      <span class="badge">C/C++</span>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="reveal">
-  <p class="section-label">// about me</p>
-  <h2 class="section-title">關於我</h2>
-  <div class="section-divider"></div>
-  <div class="about-grid">
-    <ul class="info-list">
-      <li>
-        <div class="icon">👤</div>
-        <span>陳俞閔 (Yu-Min Chen)</span>
-      </li>
-      <li>
-        <div class="icon">🎓</div>
-        <span>國立中正大學・通訊工程研究所</span>
-      </li>
-      <li>
-        <div class="icon">📍</div>
-        <span>高雄市, 台灣</span>
-      </li>
-      <li>
-        <div class="icon">✉️</div>
-        <span style="color:var(--text-dim)">（私人，請透過 GitHub 聯繫）</span>
-      </li>
-      <li>
-        <div class="icon">🐙</div>
-        <a href="https://github.com/Weselymachianl" target="_blank">github.com/Weselymachianl</a>
-      </li>
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">yumin.chen<span style="color:#8b949e">( )</span></div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#biography">自傳</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    <div class="about-quote">
-      <strong>"只要肯學就能掌握"</strong><br/><br/>
-      具備從底層演算法（強化學習、預編碼）到上層應用（Web 跨平台實作、容器化部署）的多元開發經驗。
-      做事嚴謹、條理分明，能冷靜應對突發狀況並高效排除 Bug。
-      善於團隊溝通交流，期待將紮實的學術訓練與解決問題的能力帶入職場。
-    </div>
-  </div>
-</section>
+  </nav>
 
-<!-- BIOGRAPHY -->
-<section id="biography" class="reveal">
-  <p class="section-label">// autobiography</p>
-  <h2 class="section-title">自傳</h2>
-  <div class="section-divider"></div>
-  <div class="bio-card">
-    <p class="bio-para">
-      <strong>我是陳俞閔</strong>，目前就讀於<strong>國立中正大學通訊工程研究所</strong>，預計於 2026 年 8 月取得碩士學位。在通訊工程的學習旅途中，我發現自己對於「如何讓系統做出更聰明的決策」這個問題充滿熱情，這也驅使我走向 AI 演算法與通訊系統的跨域研究。
-    </p>
-    <p class="bio-para">
-      大學就讀於<strong>國立高雄科技大學通訊工程學系</strong>，四年的學習過程中，逐漸培養出對演算法設計與系統實作的濃厚興趣。大四專題期間，我獨立完成從演算法研究到跨平台網頁展示的整合性專案——「QR Code 掃描優化與跨平台技術展示系統」。這個專案讓我第一次體驗到從零到一完整建構一個系統的成就感，憑藉高實用性與完整的技術整合，<em>榮獲畢業專題佳作</em>，也讓我更確定繼續深造的方向。
-    </p>
-    <p class="bio-para">
-      升上碩士後，研究方向聚焦於 <em>AI 演算法結合通訊系統的應用</em>，目前主要研究流體天線系統（FAS）的聯合最佳化問題，透過結合 ConvCNP 神經過程模型與深度強化學習（Assisted D3QN），在資訊不完整的條件下最大化系統總和速率。研究歷程中不僅深化了我對機器學習框架 PyTorch 的掌握，也培養了嚴謹的實驗設計方法與數據分析能力。
-    </p>
-    <p class="bio-para">
-      在技術廣度上，除了核心的 AI 研究，我也具備全端開發能力，熟悉 Python、C/C++、Node.js 與 Docker 容器化部署，曾實作多人即時聊天室系統並完成容器化部署。我相信技術是解決問題的工具，而不是終點，因此我一直保持對新技術的好奇心，並喜歡動手將想法付諸實現。
-    </p>
-    <p class="bio-para">
-      秉持著<em>「只要肯學就能掌握」</em>的積極態度，做事嚴謹、條理分明，善於在團隊中溝通協作。期待能夠將紮實的學術訓練、解決問題的邏輯思維與動手實作的能力帶入職場，在 AI、通訊或軟體開發等領域持續貢獻與成長。
-    </p>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="reveal">
-  <p class="section-label">// tech stack</p>
-  <h2 class="section-title">技術棧</h2>
-  <div class="section-divider"></div>
-  <div class="skills-grid">
-    <div>
-      <p class="skill-group-title">🤖 AI 演算法與通訊</p>
-      <div class="chips">
-        <span class="chip highlight">深度強化學習 (DRL)</span>
-        <span class="chip highlight">ConvCNP</span>
-        <span class="chip highlight">PyTorch</span>
-        <span class="chip">流體天線系統 (FAS)</span>
-        <span class="chip">RZF 預編碼</span>
-        <span class="chip">訊號處理</span>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="hero-tag">🎓 應屆碩士畢業生 · 積極求職中</div>
+      <h1 class="hero-name">陳俞閔 <span>Yu-Min Chen</span></h1>
+      <p class="hero-sub">
+        <b>AI 演算法</b> &nbsp;|&nbsp; <b>軟體研發</b> &nbsp;|&nbsp; <b>通訊系統</b>
+      </p>
+      <p class="hero-desc">
+        專精於 AI 演算法優化與系統開發，具備從底層演算法（強化學習、預編碼）
+        到上層應用（Web 全端、容器化部署）的多元開發經驗。
+      </p>
+      <div class="hero-btns">
+        <a href="mailto:XXXXXXXXX@gmail.com" class="btn btn-primary">✉️ 聯絡我</a>
+        <a href="https://github.com/Weselymachianl" target="_blank" class="btn btn-outline">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path
+              d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+          </svg>
+          GitHub
+        </a>
+      </div>
+      <div class="hero-badges">
+        <span class="badge">Python</span>
+        <span class="badge">PyTorch</span>
+        <span class="badge">Deep RL</span>
+        <span class="badge">Node.js</span>
+        <span class="badge">Docker</span>
+        <span class="badge">C/C++</span>
       </div>
     </div>
-    <div>
-      <p class="skill-group-title">💻 程式語言 & 工具</p>
-      <div class="chips">
-        <span class="chip highlight">Python</span>
-        <span class="chip">C / C++</span>
-        <span class="chip">Node.js</span>
-        <span class="chip">Git</span>
-        <span class="chip">Docker</span>
-        <span class="chip">Express.js</span>
-      </div>
-    </div>
-    <div>
-      <p class="skill-group-title">🌐 Web 開發</p>
-      <div class="chips">
-        <span class="chip">HTML5</span>
-        <span class="chip">CSS3</span>
-        <span class="chip">JavaScript</span>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="reveal">
-  <p class="section-label">// research & projects</p>
-  <h2 class="section-title">研究與開發專案</h2>
-  <div class="section-divider"></div>
-  <div class="projects-list">
-
-    <div class="project-card">
-      <div class="project-header">
-        <span class="project-title">📡 基於 ConvCNP 輔助強化學習之流體天線聯合優化</span>
-      </div>
-      <div class="project-meta">
-        <span class="project-tag tag-research">碩士研究</span>
-        <span class="project-tag tag-cloud">2024 – Present</span>
-      </div>
-      <ul class="project-desc">
-        <li>利用純 Python 獨立開發之通訊系統 AI 優化演算法</li>
-        <li>針對多用戶流體天線，結合 RZF 預編碼與改良版強化學習 (Assisted D3QN)，在僅具部分埠口資訊下最大化系統總和速率</li>
-        <li>導入卷積條件神經過程 (ConvCNP) 與漸進式學習解決傳統 DRL 收斂瓶頸</li>
-        <li>採 3 組隨機種子嚴謹驗證，確保模型具備高度統計可信度</li>
+  <!-- ABOUT -->
+  <section id="about" class="reveal">
+    <p class="section-label">// about me</p>
+    <h2 class="section-title">關於我</h2>
+    <div class="section-divider"></div>
+    <div class="about-grid">
+      <ul class="info-list">
+        <li>
+          <div class="icon">👤</div>
+          <span>陳俞閔 (Yu-Min Chen)</span>
+        </li>
+        <li>
+          <div class="icon">🎓</div>
+          <span>國立中正大學・通訊工程研究所</span>
+        </li>
+        <li>
+          <div class="icon">📍</div>
+          <span>高雄市, 台灣</span>
+        </li>
+        <li>
+          <div class="icon">✉️</div>
+          <span style="color:var(--text-dim)">（私人，請透過 GitHub 聯繫）</span>
+        </li>
+        <li>
+          <div class="icon">🐙</div>
+          <a href="https://github.com/Weselymachianl" target="_blank">github.com/Weselymachianl</a>
+        </li>
       </ul>
-      <div class="project-chips">
-        <span class="project-chip">Python</span>
-        <span class="project-chip">PyTorch</span>
-        <span class="project-chip">ConvCNP</span>
-        <span class="project-chip">Deep RL</span>
-        <span class="project-chip">FAS</span>
-        <span class="project-chip">RZF Precoding</span>
+      <div class="about-quote">
+        <strong>"只要肯學就能掌握"</strong><br /><br />
+        具備從底層演算法（強化學習、預編碼）到上層應用（Web 跨平台實作、容器化部署）的多元開發經驗。
+        做事嚴謹、條理分明，能冷靜應對突發狀況並高效排除 Bug。
+        善於團隊溝通交流，期待將紮實的學術訓練與解決問題的能力帶入職場。
       </div>
     </div>
+  </section>
 
-    <div class="project-card">
-      <div class="project-header">
-        <span class="project-title">📷 QR Code 掃描優化與跨平台技術展示系統 🏆</span>
-      </div>
-      <div class="project-meta">
-        <span class="project-tag tag-award">大學專題佳作</span>
-        <span class="project-tag tag-cloud">2023 – 2024</span>
-      </div>
-      <ul class="project-desc">
-        <li>從演算法開發到網頁全端實作的整合性專案</li>
-        <li>使用 Python 核心技術優化惡劣環境下的 QR Code 辨識率</li>
-        <li>透過 Node.js 與 HTML/CSS/JS 建立互動式展示平台</li>
-        <li>憑藉高實用性與跨技術整合的完整度，<strong>榮獲畢業專題佳作</strong></li>
-      </ul>
-      <div class="project-chips">
-        <span class="project-chip">Python</span>
-        <span class="project-chip">Node.js</span>
-        <span class="project-chip">HTML/CSS/JS</span>
-        <span class="project-chip">影像處理</span>
-      </div>
+  <!-- BIOGRAPHY -->
+  <section id="biography" class="reveal">
+    <p class="section-label">// autobiography</p>
+    <h2 class="section-title">自傳</h2>
+    <div class="section-divider"></div>
+    <div class="bio-card">
+      <p class="bio-para">
+        <strong>我是陳俞閔</strong>，目前就讀於<strong>國立中正大學通訊工程研究所</strong>，預計於 2026 年 8
+        月取得碩士學位。在通訊工程的學習旅途中，我發現自己對於「如何讓系統做出更聰明的決策」這個問題充滿熱情，這也驅使我走向 AI 演算法與通訊系統的跨域研究。
+      </p>
+      <p class="bio-para">
+        大學就讀於<strong>國立高雄科技大學通訊工程學系</strong>，四年的學習過程中，逐漸培養出對演算法設計與系統實作的濃厚興趣。大四專題期間，我獨立完成從演算法研究到跨平台網頁展示的整合性專案——「QR Code
+        掃描優化與跨平台技術展示系統」。這個專案讓我第一次體驗到從零到一完整建構一個系統的成就感，憑藉高實用性與完整的技術整合，<em>榮獲畢業專題佳作</em>，也讓我更確定繼續深造的方向。
+      </p>
+      <p class="bio-para">
+        升上碩士後，研究方向聚焦於 <em>AI 演算法結合通訊系統的應用</em>，目前主要研究流體天線系統（FAS）的聯合最佳化問題，透過結合 ConvCNP 神經過程模型與深度強化學習（Assisted
+        D3QN），在資訊不完整的條件下最大化系統總和速率。研究歷程中不僅深化了我對機器學習框架 PyTorch 的掌握，也培養了嚴謹的實驗設計方法與數據分析能力。
+      </p>
+      <p class="bio-para">
+        在技術廣度上，除了核心的 AI 研究，我也具備全端開發能力，熟悉 Python、C/C++、Node.js 與 Docker
+        容器化部署，曾實作多人即時聊天室系統並完成容器化部署。我相信技術是解決問題的工具，而不是終點，因此我一直保持對新技術的好奇心，並喜歡動手將想法付諸實現。
+      </p>
+      <p class="bio-para">
+        秉持著<em>「只要肯學就能掌握」</em>的積極態度，做事嚴謹、條理分明，善於在團隊中溝通協作。期待能夠將紮實的學術訓練、解決問題的邏輯思維與動手實作的能力帶入職場，在 AI、通訊或軟體開發等領域持續貢獻與成長。
+      </p>
     </div>
+  </section>
 
-    <div class="project-card">
-      <div class="project-header">
-        <span class="project-title">💬 Node.js 多人聊天室與 Docker 容器化部署</span>
-      </div>
-      <div class="project-meta">
-        <span class="project-tag tag-cloud">雲端運算課程實作</span>
-        <span class="project-tag tag-cloud">2023</span>
-      </div>
-      <ul class="project-desc">
-        <li>使用 Node.js 與 Express 框架開發後端，打造支援多人即時互動的簡易聊天室</li>
-        <li>運用 Docker 將專案獨立容器化，熟悉 Image 打包與 Container 運行流程</li>
-        <li>實踐服務部署與開發環境一致性的概念</li>
-      </ul>
-      <div class="project-chips">
-        <span class="project-chip">Node.js</span>
-        <span class="project-chip">Express</span>
-        <span class="project-chip">Docker</span>
-        <span class="project-chip">WebSocket</span>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education" class="reveal">
-  <p class="section-label">// education</p>
-  <h2 class="section-title">學歷</h2>
-  <div class="section-divider"></div>
-  <div class="edu-list">
-    <div class="edu-card">
+  <!-- SKILLS -->
+  <section id="skills" class="reveal">
+    <p class="section-label">// tech stack</p>
+    <h2 class="section-title">技術棧</h2>
+    <div class="section-divider"></div>
+    <div class="skills-grid">
       <div>
-        <p class="edu-school">🏫 國立中正大學</p>
-        <p class="edu-dept">通訊工程研究所</p>
+        <p class="skill-group-title">🤖 AI 演算法與通訊</p>
+        <div class="chips">
+          <span class="chip highlight">深度強化學習 (DRL)</span>
+          <span class="chip highlight">ConvCNP</span>
+          <span class="chip highlight">PyTorch</span>
+          <span class="chip">流體天線系統 (FAS)</span>
+          <span class="chip">RZF 預編碼</span>
+          <span class="chip">訊號處理</span>
+        </div>
       </div>
-      <div class="edu-right">
-        <span class="edu-degree">碩士 MASTER</span>
-        <p class="edu-period">2024/09 → 2026/08</p>
-      </div>
-    </div>
-    <div class="edu-card">
       <div>
-        <p class="edu-school">🏫 國立高雄科技大學</p>
-        <p class="edu-dept">通訊工程學系</p>
+        <p class="skill-group-title">💻 程式語言 & 工具</p>
+        <div class="chips">
+          <span class="chip highlight">Python</span>
+          <span class="chip">C / C++</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">Git</span>
+          <span class="chip">Docker</span>
+          <span class="chip">Express.js</span>
+        </div>
       </div>
-      <div class="edu-right">
-        <span class="edu-degree">學士 BACHELOR</span>
-        <p class="edu-period">2020/09 → 2024/06</p>
+      <div>
+        <p class="skill-group-title">🌐 Web 開發</p>
+        <div class="chips">
+          <span class="chip">HTML5</span>
+          <span class="chip">CSS3</span>
+          <span class="chip">JavaScript</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- INTERESTS -->
-<section id="interests" class="reveal">
-  <p class="section-label">// interests</p>
-  <h2 class="section-title">興趣愛好</h2>
-  <div class="section-divider"></div>
-  <div class="interests-grid">
-    <div class="interest-card">
-      <div class="interest-icon">🏸</div>
-      <p class="interest-name">羽球</p>
-      <p class="interest-desc">熱愛運動，享受團隊合作與競技的樂趣</p>
-    </div>
-    <div class="interest-card">
-      <div class="interest-icon">🤖</div>
-      <p class="interest-name">鑽研 AI 技術</p>
-      <p class="interest-desc">持續學習並動手實作新演算法</p>
-    </div>
-    <div class="interest-card">
-      <div class="interest-icon">🛠️</div>
-      <p class="interest-name">Side Projects</p>
-      <p class="interest-desc">喜歡把想法化為可運行的程式</p>
-    </div>
-  </div>
-</section>
+  <!-- PROJECTS -->
+  <section id="projects" class="reveal">
+    <p class="section-label">// research & projects</p>
+    <h2 class="section-title">研究與開發專案</h2>
+    <div class="section-divider"></div>
+    <div class="projects-list">
 
-<!-- CONTACT -->
-<section id="contact" class="reveal">
-  <p class="section-label">// contact</p>
-  <h2 class="section-title">聯絡我</h2>
-  <div class="section-divider" style="margin-left:auto;margin-right:auto;background:linear-gradient(90deg,transparent,var(--accent),transparent)"></div>
-  <div class="contact-cards">
-    <a href="https://github.com/Weselymachianl" target="_blank" class="contact-card">
-      <div class="contact-icon">🐙</div>
-      <p class="contact-label">GitHub</p>
-      <p class="contact-value">Weselymachianl</p>
-    </a>
-    <div class="contact-card">
-      <div class="contact-icon">📍</div>
-      <p class="contact-label">Location</p>
-      <p class="contact-value">高雄市, 台灣</p>
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-title">📡 基於 ConvCNP 輔助強化學習之流體天線聯合優化</span>
+        </div>
+        <div class="project-meta">
+          <span class="project-tag tag-research">碩士研究</span>
+          <span class="project-tag tag-cloud">2024 – Present</span>
+        </div>
+        <ul class="project-desc">
+          <li>利用純 Python 獨立開發之通訊系統 AI 優化演算法</li>
+          <li>針對多用戶流體天線，結合 RZF 預編碼與改良版強化學習 (Assisted D3QN)，在僅具部分埠口資訊下最大化系統總和速率</li>
+          <li>導入卷積條件神經過程 (ConvCNP) 與漸進式學習解決傳統 DRL 收斂瓶頸</li>
+          <li>採 3 組隨機種子嚴謹驗證，確保模型具備高度統計可信度</li>
+        </ul>
+        <div class="project-chips">
+          <span class="project-chip">Python</span>
+          <span class="project-chip">PyTorch</span>
+          <span class="project-chip">ConvCNP</span>
+          <span class="project-chip">Deep RL</span>
+          <span class="project-chip">FAS</span>
+          <span class="project-chip">RZF Precoding</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-title">📷 QR Code 掃描優化與跨平台技術展示系統 🏆</span>
+        </div>
+        <div class="project-meta">
+          <span class="project-tag tag-award">大學專題佳作</span>
+          <span class="project-tag tag-cloud">2023 – 2024</span>
+        </div>
+        <ul class="project-desc">
+          <li>從演算法開發到網頁全端實作的整合性專案</li>
+          <li>使用 Python 核心技術優化惡劣環境下的 QR Code 辨識率</li>
+          <li>透過 Node.js 與 HTML/CSS/JS 建立互動式展示平台</li>
+          <li>憑藉高實用性與跨技術整合的完整度，<strong>榮獲畢業專題佳作</strong></li>
+        </ul>
+        <div class="project-chips">
+          <span class="project-chip">Python</span>
+          <span class="project-chip">Node.js</span>
+          <span class="project-chip">HTML/CSS/JS</span>
+          <span class="project-chip">影像處理</span>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-header">
+          <span class="project-title">💬 Node.js 多人聊天室與 Docker 容器化部署</span>
+        </div>
+        <div class="project-meta">
+          <span class="project-tag tag-cloud">雲端運算課程實作</span>
+          <span class="project-tag tag-cloud">2023</span>
+        </div>
+        <ul class="project-desc">
+          <li>使用 Node.js 與 Express 框架開發後端，打造支援多人即時互動的簡易聊天室</li>
+          <li>運用 Docker 將專案獨立容器化，熟悉 Image 打包與 Container 運行流程</li>
+          <li>實踐服務部署與開發環境一致性的概念</li>
+        </ul>
+        <div class="project-chips">
+          <span class="project-chip">Node.js</span>
+          <span class="project-chip">Express</span>
+          <span class="project-chip">Docker</span>
+          <span class="project-chip">WebSocket</span>
+        </div>
+      </div>
+
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  <p>Designed & built by <span>陳俞閔 Yu-Min Chen</span> · 2026</p>
-</footer>
+  <!-- EDUCATION -->
+  <section id="education" class="reveal">
+    <p class="section-label">// education</p>
+    <h2 class="section-title">學歷</h2>
+    <div class="section-divider"></div>
+    <div class="edu-list">
+      <div class="edu-card">
+        <div>
+          <p class="edu-school">🏫 國立中正大學</p>
+          <p class="edu-dept">通訊工程研究所</p>
+        </div>
+        <div class="edu-right">
+          <span class="edu-degree">碩士 MASTER</span>
+          <p class="edu-period">2024/09 → 2026/08</p>
+        </div>
+      </div>
+      <div class="edu-card">
+        <div>
+          <p class="edu-school">🏫 國立高雄科技大學</p>
+          <p class="edu-dept">通訊工程學系</p>
+        </div>
+        <div class="edu-right">
+          <span class="edu-degree">學士 BACHELOR</span>
+          <p class="edu-period">2020/09 → 2024/06</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<script>
-  // Scroll reveal
-  const observer = new IntersectionObserver(
-    entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); }),
-    { threshold: 0.1 }
-  );
-  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-</script>
+  <!-- INTERESTS -->
+  <section id="interests" class="reveal">
+    <p class="section-label">// interests</p>
+    <h2 class="section-title">興趣愛好</h2>
+    <div class="section-divider"></div>
+    <div class="interests-grid">
+      <div class="interest-card">
+        <div class="interest-icon">🏸</div>
+        <p class="interest-name">羽球</p>
+        <p class="interest-desc">熱愛運動，享受團隊合作與競技的樂趣</p>
+      </div>
+      <div class="interest-card">
+        <div class="interest-icon">🤖</div>
+        <p class="interest-name">鑽研 AI 技術</p>
+        <p class="interest-desc">持續學習並動手實作新演算法</p>
+      </div>
+      <div class="interest-card">
+        <div class="interest-icon">🛠️</div>
+        <p class="interest-name">Side Projects</p>
+        <p class="interest-desc">喜歡把想法化為可運行的程式</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="reveal">
+    <p class="section-label">// contact</p>
+    <h2 class="section-title">聯絡我</h2>
+    <div class="section-divider"
+      style="margin-left:auto;margin-right:auto;background:linear-gradient(90deg,transparent,var(--accent),transparent)">
+    </div>
+    <div class="contact-cards">
+      <a href="https://github.com/Weselymachianl" target="_blank" class="contact-card">
+        <div class="contact-icon">🐙</div>
+        <p class="contact-label">GitHub</p>
+        <p class="contact-value">Weselymachianl</p>
+      </a>
+      <div class="contact-card">
+        <div class="contact-icon">📍</div>
+        <p class="contact-label">Location</p>
+        <p class="contact-value">高雄市, 台灣</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Designed & built by <span>陳俞閔 Yu-Min Chen</span> · 2026</p>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver(
+      entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+      { threshold: 0.1 }
+    );
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
+
 </html>

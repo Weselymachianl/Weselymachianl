@@ -4,8 +4,8 @@
 
 <br/>
 
-<a href="mailto:qazwsopp@gmail.com">
-  <img src="https://img.shields.io/badge/Gmail-qazwsopp%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
+<a href="mailto:XXXXXXXXX@gmail.com">
+  <img src="https://img.shields.io/badge/Gmail-XXXXXXXXX%40gmail.com-EA4335?style=for-the-badge&logo=gmail&logoColor=white"/>
 </a>
 &nbsp;
 <img src="https://img.shields.io/badge/📍-高雄市%2C%20台灣-0f3460?style=for-the-badge&logoColor=white"/>
