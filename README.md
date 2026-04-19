@@ -134,6 +134,12 @@ class YuMinChen:
 
 - 憑藉解決實際痛點的高實用性，以及跨領域技術的完整整合，榮獲畢業專題佳作。
 
+<div align="center">
+  <img src="figure/QR Code GYM.jpg" alt="QR Code GYM" width="600"/>
+</div>
+
+<br>
+
 `Python` `Node.js` `HTML/CSS/JS` `影像處理`
 
 ---
@@ -146,6 +152,12 @@ class YuMinChen:
 - 運用 **Docker** 將專案容器化，熟悉 Image 打包與 Container 運行流程。
 
 - 實踐了「開發與生產環境一致性」的工程標準，確保系統上線後的絕對穩定度。
+
+<div align="center">
+  <img src="figure/Nodejs Docker.jpg" alt="Nodejs Docker" width="600"/>
+</div>
+
+<br>
 
 `Node.js` `Express` `Docker` `WebSocket`
 
